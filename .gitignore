@@ -1,0 +1,20 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (only used for optional sitemap script)
+node_modules/
+npm-debug.log*
+
+# Local / secrets — never commit AdSense IDs or env
+.env
+.env.*
+.dev.vars
+
+# Cloudflare
+.wrangler/

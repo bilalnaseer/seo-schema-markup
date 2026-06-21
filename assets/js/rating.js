@@ -1,0 +1,79 @@
+/* ==========================================================================
+   rating.js — async, on-interaction ratings widget (OPT-IN, v1.1).
+   Loads current genuine rating, lets a visitor vote once/day, and injects a
+   REAL aggregateRating into the page's SoftwareApplication JSON-LD.
+   If count is 0, no aggregateRating is injected. Never fabricates ratings.
+
+   Enable by adding to a tool page:
+     <div class="rating-widget" data-page="/faq-schema-generator/" id="rate"></div>
+     <script type="module" src="/assets/js/rating.js"></script>
+   ========================================================================== */
+
+const root = document.getElementById('rate');
+if (root) {
+  const page = root.getAttribute('data-page') || location.pathname;
+  const meta = document.createElement('span');
+  meta.className = 'rating-meta';
+
+  const stars = document.createElement('div');
+  stars.className = 'stars';
+  // RTL trick in CSS means we render 5..1 for hover fill.
+  for (let v = 5; v >= 1; v--) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = '★';
+    b.setAttribute('aria-label', v + ' star' + (v > 1 ? 's' : ''));
+    b.addEventListener('click', () => vote(v));
+    stars.appendChild(b);
+  }
+  root.appendChild(stars);
+  root.appendChild(meta);
+
+  function injectAggregate(count, average) {
+    if (!count) return;
+    const appScript = [...document.querySelectorAll('script[type="application/ld+json"]')]
+      .find((s) => /"SoftwareApplication"/.test(s.textContent));
+    if (!appScript) return;
+    try {
+      const data = JSON.parse(appScript.textContent);
+      data.aggregateRating = {
+        '@type': 'AggregateRating',
+        ratingValue: String(average),
+        ratingCount: String(count),
+      };
+      appScript.textContent = JSON.stringify(data, null, 2);
+    } catch (e) {}
+  }
+
+  function show(count, average) {
+    meta.textContent = count
+      ? `${average} / 5 from ${count} vote${count > 1 ? 's' : ''}`
+      : 'Be the first to rate this tool';
+    injectAggregate(count, average);
+  }
+
+  async function load() {
+    try {
+      const r = await fetch('/api/rating?page=' + encodeURIComponent(page));
+      const d = await r.json();
+      show(d.count || 0, d.average || 0);
+    } catch (e) { meta.textContent = 'Rate this tool'; }
+  }
+
+  async function vote(value) {
+    try {
+      const r = await fetch('/api/rating', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ page, value }),
+      });
+      const d = await r.json();
+      if (d.count) show(d.count, d.average);
+      if (r.status === 429) meta.textContent += ' · you already voted today';
+    } catch (e) {}
+  }
+
+  // Defer the network call so it never blocks initial render / CWV.
+  if ('requestIdleCallback' in window) requestIdleCallback(load);
+  else setTimeout(load, 1200);
+}

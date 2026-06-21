@@ -1,0 +1,13 @@
+{
+  "name": "SEO Schema Markup Generator & Validator",
+  "short_name": "Schema Markup",
+  "description": "Free JSON-LD schema markup generators and validator.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5b6cff",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/img/logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
