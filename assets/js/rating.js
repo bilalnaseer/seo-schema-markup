@@ -70,6 +70,18 @@ if (root) {
     meta.textContent = count
       ? `${average} / 5 from ${count} vote${count > 1 ? 's' : ''}`
       : 'Be the first to rate this tool';
+      
+    const roundAvg = Math.round(average);
+    const btns = stars.querySelectorAll('button');
+    btns.forEach((b, i) => {
+      const v = 5 - i;
+      if (v <= roundAvg && count > 0) {
+        b.classList.add('on');
+      } else {
+        b.classList.remove('on');
+      }
+    });
+
     injectAggregate(count, average);
   }
 

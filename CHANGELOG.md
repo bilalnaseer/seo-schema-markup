@@ -16,6 +16,9 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 - Changed the required environment variable for the admin endpoint from `ADMIN_TOKEN` to `ADMIN_SECRET_KEY`.
 - Updated code to explicitly use the `ratings-variable` KV namespace binding if needed.
 
+### Fixed
+- Fixed an issue where the rating stars would not visually color yellow to reflect the current average rating.
+
 ### Added
 - `AGENTS.md` — source-of-truth onboarding doc for AI agents (constraints, architecture, workflows).
 - `CHANGELOG.md` — this file.

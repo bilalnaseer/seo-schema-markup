@@ -186,7 +186,6 @@ function generatorPage(p) {
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › ${p.crumbName}</nav>
     <h1>${p.h1}</h1>
     <p class="lead muted" style="max-width:760px">${p.lead}</p>
-    <div class="rating-widget" data-page="${p.slug}" id="rate"></div>
 
     <div class="tool">
       <div class="panel">
@@ -222,6 +221,8 @@ function generatorPage(p) {
         ${siblingCards(p.siblings)}
       </div>
     </section>
+
+    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="${p.slug}" id="rate"></div>
   </div>
 </main>
 
