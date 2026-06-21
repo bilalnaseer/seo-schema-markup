@@ -10,6 +10,7 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 - Protected admin endpoint (`functions/api/admin/rating.js`) for manual rating adjustments via KV config.
 - Support for `config:<page>` in `functions/api/rating.js` and frontend widget `assets/js/rating.js` to override or disable ratings.
 - Wired the rating widget (`assets/js/rating.js`) into all generator tool pages via `tools/build-pages.js`.
+- Added support for custom schema injection (e.g. `CreativeWorkSeries`) to `rating.js` via `data-schema-type` and `data-schema-name` attributes.
 
 ### Changed
 - Changed the required environment variable for the admin endpoint from `ADMIN_TOKEN` to `ADMIN_SECRET_KEY`.

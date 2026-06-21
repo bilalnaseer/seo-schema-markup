@@ -12,6 +12,8 @@
 const root = document.getElementById('rate');
 if (root) {
   const page = root.getAttribute('data-page') || location.pathname;
+  const customSchemaType = root.getAttribute('data-schema-type');
+  const customSchemaName = root.getAttribute('data-schema-name') || document.title.split(' —')[0];
   const meta = document.createElement('span');
   meta.className = 'rating-meta';
 
@@ -31,6 +33,25 @@ if (root) {
 
   function injectAggregate(count, average) {
     if (!count) return;
+
+    if (customSchemaType) {
+      const newScript = document.createElement('script');
+      newScript.type = 'application/ld+json';
+      newScript.textContent = JSON.stringify({
+        "@context": "https://schema.org/",
+        "@type": customSchemaType,
+        "name": customSchemaName,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": String(average),
+          "bestRating": "5",
+          "ratingCount": String(count)
+        }
+      }, null, 2);
+      document.head.appendChild(newScript);
+      return;
+    }
+
     const appScript = [...document.querySelectorAll('script[type="application/ld+json"]')]
       .find((s) => /"SoftwareApplication"/.test(s.textContent));
     if (!appScript) return;
