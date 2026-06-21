@@ -20,6 +20,7 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 - Fixed an issue where the rating stars would not visually color yellow to reflect the current average rating.
 
 ### Added
+- Wired the rating widget (`assets/js/rating.js`) into the `schema-markup-validator/index.html` hand-written page.
 - `AGENTS.md` — source-of-truth onboarding doc for AI agents (constraints, architecture, workflows).
 - `CHANGELOG.md` — this file.
 
