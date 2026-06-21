@@ -181,7 +181,7 @@ section.band.alt { background: var(--bg-alt); border-top: 1px solid var(--border
 .tool { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin: 28px 0; }
 @media (max-width: 900px) { .tool { grid-template-columns: 1fr; } }
 
-.panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; min-width: 0; }
 .panel h2 { margin-top: 0; font-size: 1.15rem; }
 
 .field { margin-bottom: 16px; }

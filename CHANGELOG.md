@@ -17,6 +17,7 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 - Updated code to explicitly use the `ratings-variable` KV namespace binding if needed.
 
 ### Fixed
+- Fixed a mobile responsiveness issue where the `.tool` grid would stretch horizontally off-screen due to CSS Grid blowout from the `<pre>` code block. Added `min-width: 0;` to `.panel`.
 - Fixed an issue where the rating stars would not visually color yellow to reflect the current average rating.
 
 ### Added
