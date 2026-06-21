@@ -35,7 +35,16 @@ export async function onRequestGet({ request, env }) {
   const page = safeKey(url.searchParams.get('page'));
   if (!page) return new Response(JSON.stringify({ error: 'missing page' }), { status: 400, headers: cors() });
 
-  const raw = await env.RATINGS.get('agg:' + page);
+  const configRaw = await env['ratings-variable'].get('config:' + page);
+  const config = configRaw ? JSON.parse(configRaw) : {};
+  if (config.enabled === false) {
+    return new Response(JSON.stringify({ enabled: false }), { headers: cors() });
+  }
+  if (config.count !== undefined && config.average !== undefined) {
+    return new Response(JSON.stringify({ count: config.count, average: config.average }), { headers: cors() });
+  }
+
+  const raw = await env['ratings-variable'].get('agg:' + page);
   const { count = 0, sum = 0 } = raw ? JSON.parse(raw) : {};
   const average = count ? Math.round((sum / count) * 10) / 10 : 0;
   return new Response(JSON.stringify({ count, average }), { headers: cors() });
@@ -52,27 +61,44 @@ export async function onRequestPost({ request, env }) {
     return new Response(JSON.stringify({ error: 'invalid' }), { status: 400, headers: cors() });
   }
 
+  // Check config
+  const configRaw = await env['ratings-variable'].get('config:' + page);
+  const config = configRaw ? JSON.parse(configRaw) : {};
+  if (config.enabled === false) {
+    return new Response(JSON.stringify({ error: 'ratings disabled' }), { status: 403, headers: cors() });
+  }
+
   // Rate limit: one vote per IP per page per day.
   const ip = request.headers.get('cf-connecting-ip') || '0.0.0.0';
   const voteKey = `vote:${page}:${ip}`;
-  if (await env.RATINGS.get(voteKey)) {
+  if (await env['ratings-variable'].get(voteKey)) {
     return new Response(JSON.stringify({ error: 'already voted', ...(await readAgg(env, page)) }), { status: 429, headers: cors() });
   }
 
-  const raw = await env.RATINGS.get('agg:' + page);
+  const raw = await env['ratings-variable'].get('agg:' + page);
   const agg = raw ? JSON.parse(raw) : { count: 0, sum: 0 };
   agg.count += 1;
   agg.sum += value;
 
-  await env.RATINGS.put('agg:' + page, JSON.stringify(agg));
-  await env.RATINGS.put(voteKey, '1', { expirationTtl: DAY });
+  await env['ratings-variable'].put('agg:' + page, JSON.stringify(agg));
+  await env['ratings-variable'].put(voteKey, '1', { expirationTtl: DAY });
 
   const average = Math.round((agg.sum / agg.count) * 10) / 10;
+  if (config.count !== undefined && config.average !== undefined) {
+    return new Response(JSON.stringify({ count: config.count, average: config.average }), { headers: cors() });
+  }
   return new Response(JSON.stringify({ count: agg.count, average }), { headers: cors() });
 }
 
 async function readAgg(env, page) {
-  const raw = await env.RATINGS.get('agg:' + page);
+  const configRaw = await env['ratings-variable'].get('config:' + page);
+  const config = configRaw ? JSON.parse(configRaw) : {};
+  if (config.enabled === false) return { enabled: false };
+  if (config.count !== undefined && config.average !== undefined) {
+    return { count: config.count, average: config.average };
+  }
+
+  const raw = await env['ratings-variable'].get('agg:' + page);
   const { count = 0, sum = 0 } = raw ? JSON.parse(raw) : {};
   return { count, average: count ? Math.round((sum / count) * 10) / 10 : 0 };
 }

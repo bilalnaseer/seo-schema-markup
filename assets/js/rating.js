@@ -56,6 +56,10 @@ if (root) {
     try {
       const r = await fetch('/api/rating?page=' + encodeURIComponent(page));
       const d = await r.json();
+      if (d.enabled === false) {
+        root.remove();
+        return;
+      }
       show(d.count || 0, d.average || 0);
     } catch (e) { meta.textContent = 'Rate this tool'; }
   }
@@ -68,6 +72,10 @@ if (root) {
         body: JSON.stringify({ page, value }),
       });
       const d = await r.json();
+      if (d.enabled === false || r.status === 403) {
+        root.remove();
+        return;
+      }
       if (d.count) show(d.count, d.average);
       if (r.status === 429) meta.textContent += ' · you already voted today';
     } catch (e) {}

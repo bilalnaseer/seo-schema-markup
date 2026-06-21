@@ -7,6 +7,15 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 ## [Unreleased]
 
 ### Added
+- Protected admin endpoint (`functions/api/admin/rating.js`) for manual rating adjustments via KV config.
+- Support for `config:<page>` in `functions/api/rating.js` and frontend widget `assets/js/rating.js` to override or disable ratings.
+- Wired the rating widget (`assets/js/rating.js`) into all generator tool pages via `tools/build-pages.js`.
+
+### Changed
+- Changed the required environment variable for the admin endpoint from `ADMIN_TOKEN` to `ADMIN_SECRET_KEY`.
+- Updated code to explicitly use the `ratings-variable` KV namespace binding if needed.
+
+### Added
 - `AGENTS.md` — source-of-truth onboarding doc for AI agents (constraints, architecture, workflows).
 - `CHANGELOG.md` — this file.
 
