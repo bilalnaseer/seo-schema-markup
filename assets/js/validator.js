@@ -21,13 +21,15 @@ function has(node, prop) {
   return true;
 }
 
-/* Validate a single node against its rule(s). Pushes findings; recurses. */
-function validateNode(node, findings, path) {
+/* Validate a single node against its rule(s). Pushes findings; recurses.
+   opts.skipRootRecommended suppresses recommended (warn) findings on the
+   top-level node only — used by generators where the root is a stub. */
+function validateNode(node, findings, path, opts = {}, isRoot = false) {
   if (!node || typeof node !== 'object') return;
 
-  // Arrays of nodes
+  // Arrays of nodes — array elements keep the root-ness of the array itself.
   if (Array.isArray(node)) {
-    node.forEach((n, i) => validateNode(n, findings, `${path}[${i}]`));
+    node.forEach((n, i) => validateNode(n, findings, `${path}[${i}]`, opts, isRoot));
     return;
   }
 
@@ -58,10 +60,12 @@ function validateNode(node, findings, path) {
         findings.push({ level: 'error', message: `${type}: missing required property "${r.prop}". ${r.note}`, generator: generatorFor(type) });
       }
     }
-    // Recommended
-    for (const r of rule.recommended) {
-      if (!has(node, r.prop)) {
-        findings.push({ level: 'warn', message: `${type}: missing recommended property "${r.prop}". ${r.note}` });
+    // Recommended (skipped for the root node when the caller opts out)
+    if (!(isRoot && opts.skipRootRecommended)) {
+      for (const r of rule.recommended) {
+        if (!has(node, r.prop)) {
+          findings.push({ level: 'warn', message: `${type}: missing recommended property "${r.prop}". ${r.note}` });
+        }
       }
     }
 
@@ -75,7 +79,7 @@ function validateNode(node, findings, path) {
             // assume the documented child type if missing
             child = Object.assign({ '@type': rule.childType }, child);
           }
-          validateNode(child, findings, `${type}.${rule.collection}[${i}]`);
+          validateNode(child, findings, `${type}.${rule.collection}[${i}]`, opts);
         });
       }
     }
@@ -85,9 +89,9 @@ function validateNode(node, findings, path) {
   for (const [key, value] of Object.entries(node)) {
     if (key === '@context' || key === '@type' || handledKeys.has(key)) continue;
     if (Array.isArray(value)) {
-      value.forEach((v, i) => { if (v && typeof v === 'object') validateNode(v, findings, `${label}.${key}[${i}]`); });
+      value.forEach((v, i) => { if (v && typeof v === 'object') validateNode(v, findings, `${label}.${key}[${i}]`, opts); });
     } else if (value && typeof value === 'object') {
-      validateNode(value, findings, `${label}.${key}`);
+      validateNode(value, findings, `${label}.${key}`, opts);
     }
   }
 
@@ -97,7 +101,7 @@ function validateNode(node, findings, path) {
 }
 
 /* Validate one already-parsed JSON-LD object/array. Returns findings. */
-export function validateObject(obj) {
+export function validateObject(obj, opts = {}) {
   const findings = [];
   // Unwrap @graph
   let nodes;
@@ -120,7 +124,7 @@ export function validateObject(obj) {
         findings.push({ level: 'warn', message: `@context is "${node['@context']}" — expected it to reference schema.org.` });
       }
     }
-    validateNode(node, findings, '');
+    validateNode(node, findings, '', opts, true);
   });
 
   return findings;

@@ -121,7 +121,7 @@ export function mountGenerator(config) {
     codeEl._json = json;
 
     // Validate the generated object using the shared engine.
-    const findings = validateObject(obj);
+    const findings = validateObject(obj, { skipRootRecommended: config.skipRootRecommended });
     const { errors, warnings } = summarize(findings);
     resultsEl.innerHTML = '';
     const pill = el('div', { class: 'summary-pill ' + (errors ? 'fail' : 'pass') }, [

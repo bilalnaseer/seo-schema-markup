@@ -12,7 +12,12 @@ mountGenerator({
     description: 'A hands-on workshop on structured data for SEO.',
     venue: 'Austin Convention Center', street: '500 E Cesar Chavez St', city: 'Austin', region: 'TX', postal: '78701', country: 'US',
     price: '49.00', priceCurrency: 'USD', ticketUrl: 'https://example.com/tickets',
-    performer: 'Bilal Naseer', organizer: 'WebSensePro', organizerUrl: 'https://websensepro.com',
+    priceValidUntil: '2026-09-01',
+    performer: 'Bilal Naseer', performerUrl: 'https://example.com/speakers/bilal-naseer',
+    organizer: 'WebSensePro', organizerUrl: 'https://websensepro.com',
+    organizerLogo: 'https://websensepro.com/logo.png',
+    organizerSameAs: 'https://twitter.com/websensepro\nhttps://www.linkedin.com/company/websensepro',
+    organizerPhone: '+1-555-123-4567', organizerContactType: 'customer service',
   },
   fields: [
     { name: 'name', label: 'Event name', type: 'text', required: true },
@@ -41,9 +46,15 @@ mountGenerator({
     { name: 'price', label: 'Ticket price', type: 'text', advanced: true },
     { name: 'priceCurrency', label: 'Currency', type: 'text', advanced: true, placeholder: 'USD' },
     { name: 'ticketUrl', label: 'Ticket URL', type: 'url', advanced: true },
+    { name: 'priceValidUntil', label: 'Price valid until', type: 'date', advanced: true, hint: 'Date the ticket price is valid until (ISO 8601).' },
     { name: 'performer', label: 'Performer', type: 'text', advanced: true },
+    { name: 'performerUrl', label: 'Performer URL', type: 'url', advanced: true, hint: 'Profile/bio page that identifies the performer.' },
     { name: 'organizer', label: 'Organizer', type: 'text', advanced: true },
     { name: 'organizerUrl', label: 'Organizer URL', type: 'url', advanced: true },
+    { name: 'organizerLogo', label: 'Organizer logo URL', type: 'url', advanced: true },
+    { name: 'organizerSameAs', label: 'Organizer social profiles', type: 'textarea', advanced: true, rows: 2, hint: 'One profile URL per line (Twitter, LinkedIn, etc.).' },
+    { name: 'organizerPhone', label: 'Organizer contact phone', type: 'text', advanced: true, placeholder: '+1-555-123-4567' },
+    { name: 'organizerContactType', label: 'Contact type', type: 'text', advanced: true, placeholder: 'customer service' },
   ],
   build(v) {
     const online = v.mode && v.mode.indexOf('Online') > -1;
@@ -75,10 +86,20 @@ mountGenerator({
       out.offers = {
         '@type': 'Offer', price: v.price, priceCurrency: v.priceCurrency,
         url: v.ticketUrl, availability: 'https://schema.org/InStock',
+        priceValidUntil: v.priceValidUntil,
       };
     }
-    if (v.performer) out.performer = { '@type': 'Person', name: v.performer };
-    if (v.organizer) out.organizer = { '@type': 'Organization', name: v.organizer, url: v.organizerUrl };
+    if (v.performer) out.performer = { '@type': 'Person', name: v.performer, url: v.performerUrl };
+    if (v.organizer) out.organizer = {
+      '@type': 'Organization', name: v.organizer, url: v.organizerUrl,
+      logo: v.organizerLogo ? { '@type': 'ImageObject', url: v.organizerLogo } : undefined,
+      sameAs: (v.organizerSameAs || '').split(/[\n,]/).map((s) => s.trim()).filter(Boolean),
+      contactPoint: v.organizerPhone ? {
+        '@type': 'ContactPoint',
+        contactType: v.organizerContactType || 'customer service',
+        telephone: v.organizerPhone,
+      } : undefined,
+    };
     return out;
   },
 });
