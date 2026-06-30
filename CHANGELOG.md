@@ -7,6 +7,7 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 ## [Unreleased]
 
 ### Added
+- Deprecation notice on `/faq-schema-generator/` (top of page, above H1) explaining Google deprecated FAQ rich results — no longer shown in Search as of May 7, 2026 (announced May 8, 2026; docs removed June 15, 2026), per https://developers.google.com/search/updates#faq-deprecation; `FAQPage` markup stays valid, tool stays fully functional. Implemented as a new optional `notice` field on the FAQ config in `tools/pages-data.js`, rendered by the generator template in `tools/build-pages.js`, styled with a new `.notice` callout (warn tokens, dark-mode aware) in `main.css`. Static/non-dismissible to respect the no-browser-storage constraint.
 - Protected admin endpoint (`functions/api/admin/rating.js`) for manual rating adjustments via KV config.
 - Support for `config:<page>` in `functions/api/rating.js` and frontend widget `assets/js/rating.js` to override or disable ratings.
 - Wired the rating widget (`assets/js/rating.js`) into all generator tool pages via `tools/build-pages.js`.

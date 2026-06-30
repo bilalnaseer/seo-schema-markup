@@ -287,6 +287,12 @@ pre.code code { font-family: inherit; white-space: pre; }
 .crumbs a { color: var(--text-soft); }
 .crumbs a:hover { color: var(--accent); }
 
+/* page notice / deprecation callout */
+.notice { display: flex; gap: 12px; align-items: flex-start; max-width: 760px; margin: 20px 0 0; padding: 14px 16px; background: var(--warn-bg); border: 1px solid var(--warn); border-left-width: 4px; border-radius: var(--radius-sm); color: var(--text); font-size: .92rem; line-height: 1.5; }
+.notice .notice-icon { flex: 0 0 auto; color: var(--warn); font-size: 1.1rem; line-height: 1.4; }
+.notice strong { color: var(--text); }
+.notice a { color: var(--accent); font-weight: 600; }
+
 /* utility */
 .center { text-align: center; }
 .mt0 { margin-top: 0; } .mb0 { margin-bottom: 0; }

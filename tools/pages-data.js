@@ -12,6 +12,7 @@ const generators = [
     title: 'FAQ Schema Generator — Free FAQPage JSON-LD Tool',
     desc: 'Free FAQ schema generator. Create valid FAQPage JSON-LD markup for FAQ rich snippets in seconds. Copy the ready-to-paste script — no signup.',
     h1: 'FAQ Schema Generator',
+    notice: '<strong>Heads up:</strong> Google has deprecated FAQ rich results. As of <strong>May 7, 2026</strong> the FAQ rich result no longer appears in Google Search (announced May 8, 2026), and Google removed its FAQ structured data documentation on June 15, 2026. <code>FAQPage</code> markup is still valid structured data, but it no longer produces an FAQ rich result in Search. <a href="https://developers.google.com/search/updates#faq-deprecation" rel="noopener" target="_blank">Read Google&rsquo;s announcement</a>.',
     lead: 'Create valid <strong>FAQ schema markup</strong> (FAQPage JSON-LD) for your Q&amp;A content and earn FAQ rich results in Google. Add your questions, copy the snippet, done.',
     extraJsonLd: `\n<script type="application/ld+json">
 {

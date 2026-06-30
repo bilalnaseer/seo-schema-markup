@@ -184,6 +184,7 @@ function generatorPage(p) {
 <main id="main">
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › ${p.crumbName}</nav>
+    ${p.notice ? `<div class="notice" role="note"><span class="notice-icon" aria-hidden="true">⚠️</span><div>${p.notice}</div></div>` : ''}
     <h1>${p.h1}</h1>
     <p class="lead muted" style="max-width:760px">${p.lead}</p>
 
