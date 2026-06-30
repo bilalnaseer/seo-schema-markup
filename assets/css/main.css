@@ -258,7 +258,7 @@ pre.code code { font-family: inherit; white-space: pre; }
 .cta-box h3 { margin-top: 0; }
 
 /* ---------- Ad slots (reserved, NOT live in repo) ---------- */
-.ad-slot { min-height: 100px; margin: 28px auto; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border); border-radius: var(--radius-sm); color: var(--text-soft); font-size: .8rem; background: var(--bg-alt); max-width: 760px; }
+.ad-slot { min-height: 100px; margin: 28px auto; display: none; align-items: center; justify-content: center; border: 1px dashed var(--border); border-radius: var(--radius-sm); color: var(--text-soft); font-size: .8rem; background: var(--bg-alt); max-width: 760px; }
 .ad-slot[data-format="leaderboard"] { min-height: 90px; }
 .ad-slot[data-format="inline"] { min-height: 250px; }
 
