@@ -153,9 +153,81 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---------- Hero ---------- */
-.hero { padding: 64px 0 40px; text-align: center; }
+.hero { padding: 64px 0 40px; text-align: center; position: relative; overflow: hidden; }
 .hero p.lead { font-size: 1.18rem; color: var(--text-soft); max-width: 680px; margin: 0 auto 1.6em; }
-.badge { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: .82rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; margin-bottom: 18px; }
+.badge {
+  display: inline-block; color: var(--accent);
+  font-size: .82rem; font-weight: 600; padding: 5px 12px;
+  border-radius: 999px; margin-bottom: 18px;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--accent-soft), var(--accent-soft)) padding-box,
+    conic-gradient(from var(--angle), transparent 70%,  #000000 84%, transparent 98%) border-box,
+    linear-gradient(var(--accent-soft), var(--accent-soft)) border-box;
+  animation: badgeBorderSpin 3s linear infinite;
+}
+
+/* Soft animated glow behind the hero (decorative, no layout impact) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -120px; left: 50%;
+  width: 620px; height: 420px;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, var(--accent-soft), transparent 70%);
+  opacity: .7;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(10px);
+  animation: heroGlow 9s ease-in-out infinite;
+}
+.hero > * { position: relative; z-index: 1; }
+
+/* Staggered fade-up entrance for hero content */
+.hero > .badge,
+.hero > h1,
+.hero > p.lead,
+.hero > div { animation: heroRise .7s cubic-bezier(.2, .7, .3, 1) both; }
+.hero > .badge {
+  animation: heroRise .7s cubic-bezier(.2, .7, .3, 1) both, badgeBorderSpin 3s linear infinite;
+  animation-delay: .05s, 0s;
+}
+.hero > h1     { animation-delay: .15s; }
+.hero > p.lead { animation-delay: .28s; }
+.hero > div    { animation-delay: .40s; }
+
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroGlow {
+  0%, 100% { opacity: .55; transform: translateX(-50%) scale(1); }
+  50%      { opacity: .8;  transform: translateX(-50%) scale(1.08); }
+}
+
+/* Continuously moving light around the badge border */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes badgeBorderSpin {
+  to { --angle: 360deg; }
+}
+
+/* Gentle lift on the hero CTAs */
+.hero .btn { transition: background .15s, border-color .15s, transform .15s ease, box-shadow .15s ease; }
+.hero .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px -8px var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
+  .badge,
+  .hero > .badge,
+  .hero > h1,
+  .hero > p.lead,
+  .hero > div { animation: none; }
+  .hero .btn:hover { transform: none; }
+}
 
 /* ---------- Buttons ---------- */
 .btn { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font: inherit; font-weight: 600; font-size: .95rem; padding: 11px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; transition: background .15s, border-color .15s; }
