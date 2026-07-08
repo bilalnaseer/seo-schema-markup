@@ -296,6 +296,51 @@ const guides = [
     siblings: GEN_CARDS,
   },
   {
+    slug: '/aggregaterating-schema/',
+    crumbName: 'AggregateRating Schema',
+    title: 'AggregateRating Schema: Star Ratings in Google (JSON-LD)',
+    desc: 'AggregateRating schema explained: add the JSON-LD that earns star-rating rich results, the required properties, Google’s rules, and a free generator.',
+    h1: 'AggregateRating Schema',
+    body: `<p><strong>AggregateRating schema</strong> is the structured data that tells search engines the overall score a page has earned from many reviews — for example “4.6 out of 5 from 128 ratings.” When it's valid and backed by genuine, visible reviews, Google can show gold star ratings next to your result, which stand out in the listings and tend to lift click-through rate.</p>
+<figure>
+  <img src="/assets/img/aggregaterating-schema.png" alt="Example Google search result showing a gold AggregateRating star rating with review count below the page title" width="760" loading="lazy">
+  <figcaption>What AggregateRating schema can produce: star ratings and a review count shown directly in Google's search results.</figcaption>
+</figure>
+<h2>What is AggregateRating?</h2>
+<p><code>AggregateRating</code> is a schema.org type that summarises multiple individual ratings into one score. It never stands alone — it's nested inside the thing being rated, most commonly a <a href="/product-schema-generator/">Product</a>, but also <code>LocalBusiness</code>, <code>Recipe</code>, <code>Event</code>, <code>Book</code>, <code>Course</code> or <code>SoftwareApplication</code>. It's the aggregate counterpart to a single <a href="/review-schema-generator/">Review</a>, which captures one person's rating.</p>
+<h2>Required and recommended properties</h2>
+<p>To be eligible for star rich results, your <code>AggregateRating</code> needs the following:</p>
+<ul>
+<li><strong><code>ratingValue</code></strong> (required) — the average score, e.g. <code>4.6</code>.</li>
+<li><strong><code>ratingCount</code></strong> or <strong><code>reviewCount</code></strong> (one is required) — how many ratings/reviews the average is based on.</li>
+<li><strong><code>bestRating</code></strong> (recommended) — the top of the scale; defaults to <code>5</code> if omitted.</li>
+<li><strong><code>worstRating</code></strong> (recommended) — the bottom of the scale; defaults to <code>1</code>.</li>
+</ul>
+<h2>Example: Product with AggregateRating</h2>
+<p>Here's how <code>aggregateRating</code> is nested inside a <code>Product</code> in JSON-LD:</p>
+<pre class="code"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Wireless Noise-Cancelling Headphones",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "128",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+&lt;/script&gt;</code></pre>
+<h2>Google's rules — ratings must be genuine</h2>
+<p>This is the part that gets sites penalised. Only add <code>AggregateRating</code> markup when the ratings are <strong>real, collected from your users, and actually visible on the same page</strong>. Do not invent an average, reuse the same rating across every page, or mark up ratings that live somewhere else. Self-serving or fabricated ratings violate <a href="https://developers.google.com/search/docs/appearance/structured-data/review-snippet" rel="nofollow noopener" target="_blank">Google's review snippet guidelines</a> and can trigger a manual action that strips <em>all</em> your rich results. If you have no ratings yet, leave the markup out entirely.</p>
+<h2>How to generate AggregateRating markup</h2>
+<p>The quickest way is our <a href="/review-schema-generator/">Review schema generator</a> or <a href="/product-schema-generator/">Product schema generator</a> — both let you add a genuine <code>aggregateRating</code> and copy ready-to-paste JSON-LD. Fill in your real average and review count, then follow <a href="/how-to-add-schema-markup/">how to add schema markup</a> to place the snippet on your page.</p>
+<h2>Validate before you publish</h2>
+<p>Paste your markup into our <a href="/schema-markup-validator/">schema markup validator</a> to confirm the required properties are present, then run it through Google's <a href="https://search.google.com/test/rich-results" rel="nofollow noopener" target="_blank">Rich Results Test</a> to confirm star eligibility. New to structured data? Start with <a href="/what-is-schema-markup/">what is schema markup</a> and the <a href="/types-of-schema-markup/">types of schema markup</a>.</p>`,
+    siblings: GEN_CARDS,
+  },
+  {
     slug: '/shopify-schema-markup/',
     crumbName: 'Shopify Schema Markup',
     title: 'Shopify Schema Markup: Implementation Guide (JSON-LD)',

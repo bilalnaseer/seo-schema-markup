@@ -43,6 +43,7 @@ function nav() {
           <a href="/types-of-schema-markup/">Types of Schema Markup</a>
           <a href="/how-to-add-schema-markup/">How to Add Schema Markup</a>
           <a href="/json-ld/">What is JSON-LD</a>
+          <a href="/aggregaterating-schema/">AggregateRating Schema</a>
           <a href="/shopify-schema-markup/">Shopify Schema Markup</a>
           <a href="/wordpress-schema-markup/">WordPress Schema Markup</a>
         </div>
@@ -85,6 +86,7 @@ function footer() {
           <li><a href="/types-of-schema-markup/">Types of Schema Markup</a></li>
           <li><a href="/how-to-add-schema-markup/">How to Add Schema Markup</a></li>
           <li><a href="/json-ld/">What is JSON-LD</a></li>
+          <li><a href="/aggregaterating-schema/">AggregateRating Schema</a></li>
           <li><a href="/shopify-schema-markup/">Shopify Schema Markup</a></li>
           <li><a href="/wordpress-schema-markup/">WordPress Schema Markup</a></li>
         </ul>
@@ -256,12 +258,15 @@ function guidePage(p) {
         ${siblingCards(p.siblings)}
       </div>
     </section>
+
+    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="${p.slug}" data-schema-type="CreativeWorkSeries" data-schema-name="${p.crumbName}" id="rate"></div>
   </div>
 </main>
 
 ${footer()}
 
 <script type="module">import { boot } from '/assets/js/shared.js'; boot();</script>
+<script type="module" src="/assets/js/rating.js"></script>
 </body>
 </html>
 `;

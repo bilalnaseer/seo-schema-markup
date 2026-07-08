@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What is Schema Markup? Structured Data Explained Simply</title>
-<meta name="description" content="What is schema markup in laymans terms? A plain-English guide to structured data, how it works, and why it matters for SEO and rich results.">
-<link rel="canonical" href="https://seoschemamarkup.com/what-is-schema-markup/">
+<title>AggregateRating Schema: Star Ratings in Google (JSON-LD)</title>
+<meta name="description" content="AggregateRating schema explained: add the JSON-LD that earns star-rating rich results, the required properties, Google’s rules, and a free generator.">
+<link rel="canonical" href="https://seoschemamarkup.com/aggregaterating-schema/">
 <meta name="theme-color" content="#5b6cff">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SEO Schema Markup">
-<meta property="og:title" content="What is Schema Markup? Structured Data Explained Simply">
-<meta property="og:description" content="What is schema markup in laymans terms? A plain-English guide to structured data, how it works, and why it matters for SEO and rich results.">
-<meta property="og:url" content="https://seoschemamarkup.com/what-is-schema-markup/">
+<meta property="og:title" content="AggregateRating Schema: Star Ratings in Google (JSON-LD)">
+<meta property="og:description" content="AggregateRating schema explained: add the JSON-LD that earns star-rating rich results, the required properties, Google’s rules, and a free generator.">
+<meta property="og:url" content="https://seoschemamarkup.com/aggregaterating-schema/">
 <meta property="og:image" content="https://seoschemamarkup.com/assets/img/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What is Schema Markup? Structured Data Explained Simply">
-<meta name="twitter:description" content="What is schema markup in laymans terms? A plain-English guide to structured data, how it works, and why it matters for SEO and rich results.">
+<meta name="twitter:title" content="AggregateRating Schema: Star Ratings in Google (JSON-LD)">
+<meta name="twitter:description" content="AggregateRating schema explained: add the JSON-LD that earns star-rating rich results, the required properties, Google’s rules, and a free generator.">
 <meta name="twitter:image" content="https://seoschemamarkup.com/assets/img/og-default.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,7 +33,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seoschemamarkup.com/" },
-    { "@type": "ListItem", "position": 2, "name": "What is Schema Markup", "item": "https://seoschemamarkup.com/what-is-schema-markup/" }
+    { "@type": "ListItem", "position": 2, "name": "AggregateRating Schema", "item": "https://seoschemamarkup.com/aggregaterating-schema/" }
   ]
 }
 </script>
@@ -82,30 +82,46 @@
 
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › What is Schema Markup</nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › AggregateRating Schema</nav>
     <article class="prose">
-      <h1>What is Schema Markup?</h1>
-      <p><strong>Schema markup</strong> is a small piece of code you add to a web page that helps search engines understand what the page is about. In layman's terms: your page might say “4.6 stars, $79, in stock,” and a human instantly gets it — but a search engine sees just text. Schema markup labels that text so the machine knows “this is a rating, this is a price, this is availability.”</p>
-<p>It's also called <strong>structured data</strong>. The vocabulary comes from <a href="https://schema.org" rel="noopener" target="_blank">schema.org</a>, a shared standard backed by Google, Microsoft, Yahoo and Yandex. The recommended format for adding it is <a href="/json-ld/">JSON-LD</a>.</p>
-<h2>What is website schema used for?</h2>
-<p>When search engines understand your content, they can present it more richly. That's where <strong>rich results</strong> come from — the enhanced listings with star ratings, FAQ dropdowns, breadcrumbs, event dates, recipe cards and more. Rich results take up more space and tend to attract more clicks.</p>
-<h2>A simple example</h2>
-<p>Here's FAQ schema in JSON-LD:</p>
+      <h1>AggregateRating Schema</h1>
+      <p><strong>AggregateRating schema</strong> is the structured data that tells search engines the overall score a page has earned from many reviews — for example “4.6 out of 5 from 128 ratings.” When it's valid and backed by genuine, visible reviews, Google can show gold star ratings next to your result, which stand out in the listings and tend to lift click-through rate.</p>
+<figure>
+  <img src="/assets/img/aggregaterating-schema.png" alt="Example Google search result showing a gold AggregateRating star rating with review count below the page title" width="760" loading="lazy">
+  <figcaption>What AggregateRating schema can produce: star ratings and a review count shown directly in Google's search results.</figcaption>
+</figure>
+<h2>What is AggregateRating?</h2>
+<p><code>AggregateRating</code> is a schema.org type that summarises multiple individual ratings into one score. It never stands alone — it's nested inside the thing being rated, most commonly a <a href="/product-schema-generator/">Product</a>, but also <code>LocalBusiness</code>, <code>Recipe</code>, <code>Event</code>, <code>Book</code>, <code>Course</code> or <code>SoftwareApplication</code>. It's the aggregate counterpart to a single <a href="/review-schema-generator/">Review</a>, which captures one person's rating.</p>
+<h2>Required and recommended properties</h2>
+<p>To be eligible for star rich results, your <code>AggregateRating</code> needs the following:</p>
+<ul>
+<li><strong><code>ratingValue</code></strong> (required) — the average score, e.g. <code>4.6</code>.</li>
+<li><strong><code>ratingCount</code></strong> or <strong><code>reviewCount</code></strong> (one is required) — how many ratings/reviews the average is based on.</li>
+<li><strong><code>bestRating</code></strong> (recommended) — the top of the scale; defaults to <code>5</code> if omitted.</li>
+<li><strong><code>worstRating</code></strong> (recommended) — the bottom of the scale; defaults to <code>1</code>.</li>
+</ul>
+<h2>Example: Product with AggregateRating</h2>
+<p>Here's how <code>aggregateRating</code> is nested inside a <code>Product</code> in JSON-LD:</p>
 <pre class="code"><code>&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is schema markup?",
-    "acceptedAnswer": { "@type": "Answer", "text": "Code that helps search engines understand your page." }
-  }]
+  "@type": "Product",
+  "name": "Wireless Noise-Cancelling Headphones",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "128",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
 &lt;/script&gt;</code></pre>
-<h2>Does schema markup help SEO?</h2>
-<p>Schema markup is not a direct ranking factor, but it makes you eligible for rich results, which improve click-through rate — and it helps search engines understand your site's entities and relationships. Both indirectly support SEO.</p>
-<h2>How do I add it?</h2>
-<p>The easiest way is to generate it with a tool and paste it in. Start with our <a href="/faq-schema-generator/">FAQ</a>, <a href="/product-schema-generator/">Product</a> or <a href="/article-schema-generator/">Article</a> generators, then read <a href="/how-to-add-schema-markup/">how to add schema markup</a> and explore the <a href="/types-of-schema-markup/">types of schema markup</a> worth using.</p>
+<h2>Google's rules — ratings must be genuine</h2>
+<p>This is the part that gets sites penalised. Only add <code>AggregateRating</code> markup when the ratings are <strong>real, collected from your users, and actually visible on the same page</strong>. Do not invent an average, reuse the same rating across every page, or mark up ratings that live somewhere else. Self-serving or fabricated ratings violate <a href="https://developers.google.com/search/docs/appearance/structured-data/review-snippet" rel="nofollow noopener" target="_blank">Google's review snippet guidelines</a> and can trigger a manual action that strips <em>all</em> your rich results. If you have no ratings yet, leave the markup out entirely.</p>
+<h2>How to generate AggregateRating markup</h2>
+<p>The quickest way is our <a href="/review-schema-generator/">Review schema generator</a> or <a href="/product-schema-generator/">Product schema generator</a> — both let you add a genuine <code>aggregateRating</code> and copy ready-to-paste JSON-LD. Fill in your real average and review count, then follow <a href="/how-to-add-schema-markup/">how to add schema markup</a> to place the snippet on your page.</p>
+<h2>Validate before you publish</h2>
+<p>Paste your markup into our <a href="/schema-markup-validator/">schema markup validator</a> to confirm the required properties are present, then run it through Google's <a href="https://search.google.com/test/rich-results" rel="nofollow noopener" target="_blank">Rich Results Test</a> to confirm star eligibility. New to structured data? Start with <a href="/what-is-schema-markup/">what is schema markup</a> and the <a href="/types-of-schema-markup/">types of schema markup</a>.</p>
       
     </article>
     <div class="ad-slot" data-format="inline" aria-hidden="true"><!-- Reserved ad slot -->Ad space</div>
@@ -119,7 +135,7 @@
       </div>
     </section>
 
-    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="/what-is-schema-markup/" data-schema-type="CreativeWorkSeries" data-schema-name="What is Schema Markup" id="rate"></div>
+    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="/aggregaterating-schema/" data-schema-type="CreativeWorkSeries" data-schema-name="AggregateRating Schema" id="rate"></div>
   </div>
 </main>
 
