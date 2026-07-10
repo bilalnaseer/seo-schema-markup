@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Local Business Schema Generator — LocalBusiness &amp; Restaurant JSON-LD</title>
-<meta name="description" content="Free local business &amp; restaurant JSON-LD schema generator. Create valid LocalBusiness markup with address, hours, phone &amp; geo for local SEO.">
-<link rel="canonical" href="https://seoschemamarkup.com/local-business-schema-generator/">
+<title>Shopify Product Schema Generator — Dynamic JSON-LD</title>
+<meta name="description" content="Free Shopify product schema generator. Build dynamic Product JSON-LD (Liquid) with title, price, variants &amp; real ratings for your theme — copy &amp; paste.">
+<link rel="canonical" href="https://seoschemamarkup.com/shopify-product-schema-generator/">
 <meta name="theme-color" content="#5b6cff">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SEO Schema Markup">
-<meta property="og:title" content="Local Business Schema Generator — LocalBusiness &amp; Restaurant JSON-LD">
-<meta property="og:description" content="Free local business &amp; restaurant JSON-LD schema generator. Create valid LocalBusiness markup with address, hours, phone &amp; geo for local SEO.">
-<meta property="og:url" content="https://seoschemamarkup.com/local-business-schema-generator/">
+<meta property="og:title" content="Shopify Product Schema Generator — Dynamic JSON-LD">
+<meta property="og:description" content="Free Shopify product schema generator. Build dynamic Product JSON-LD (Liquid) with title, price, variants &amp; real ratings for your theme — copy &amp; paste.">
+<meta property="og:url" content="https://seoschemamarkup.com/shopify-product-schema-generator/">
 <meta property="og:image" content="https://seoschemamarkup.com/assets/img/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Local Business Schema Generator — LocalBusiness &amp; Restaurant JSON-LD">
-<meta name="twitter:description" content="Free local business &amp; restaurant JSON-LD schema generator. Create valid LocalBusiness markup with address, hours, phone &amp; geo for local SEO.">
+<meta name="twitter:title" content="Shopify Product Schema Generator — Dynamic JSON-LD">
+<meta name="twitter:description" content="Free Shopify product schema generator. Build dynamic Product JSON-LD (Liquid) with title, price, variants &amp; real ratings for your theme — copy &amp; paste.">
 <meta name="twitter:image" content="https://seoschemamarkup.com/assets/img/og-default.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,7 +33,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seoschemamarkup.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Local Business Schema Generator", "item": "https://seoschemamarkup.com/local-business-schema-generator/" }
+    { "@type": "ListItem", "position": 2, "name": "Shopify Product Schema Generator", "item": "https://seoschemamarkup.com/shopify-product-schema-generator/" }
   ]
 }
 </script>
@@ -41,10 +41,10 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Local Business Schema Generator",
+  "name": "Shopify Product Schema Generator",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Web",
-  "url": "https://seoschemamarkup.com/local-business-schema-generator/",
+  "url": "https://seoschemamarkup.com/shopify-product-schema-generator/",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -94,10 +94,10 @@
 
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Local Business Schema Generator</nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Shopify Product Schema Generator</nav>
     
-    <h1>Local Business Schema Generator</h1>
-    <p class="lead muted" style="max-width:760px">Generate valid <strong>LocalBusiness schema</strong> markup — including a <strong>restaurant JSON-LD</strong> option — with address, opening hours, phone and geo coordinates for local SEO.</p>
+    <h1>Shopify Product Schema Generator</h1>
+    <p class="lead muted" style="max-width:760px">Generate a <strong>dynamic Product schema</strong> snippet for your Shopify theme. Instead of static values, it outputs <strong>Liquid</strong> that fills in each product&rsquo;s title, description, price, variants and ratings automatically — one snippet covers your whole catalog.</p>
 
     <div class="tool">
       <div class="panel">
@@ -111,10 +111,10 @@
 
       <div class="panel">
         <div class="output-head">
-          <h2>JSON-LD output</h2>
-          <button class="btn btn-ghost btn-sm" id="copyJson">Copy JSON</button>
-          <button class="btn btn-ghost btn-sm" id="copyScript">Copy &lt;script&gt;</button>
-          <button class="btn btn-primary btn-sm" id="downloadJson">Download</button>
+          <h2>Liquid code for your theme</h2>
+          <button class="btn btn-ghost btn-sm" id="copyJson">Copy Liquid</button>
+          
+          <button class="btn btn-primary btn-sm" id="downloadJson">Download .liquid</button>
         </div>
         <div class="codewrap"><pre class="code"><code id="genCode"></code></pre></div>
         <div class="results" id="genResults"></div>
@@ -124,29 +124,39 @@
     <div class="ad-slot" data-format="leaderboard" aria-hidden="true"><!-- Reserved ad slot -->Ad space</div>
 
     <section class="explainer">
-      <h2>How to use local business schema markup</h2>
-<p><strong>LocalBusiness schema</strong> is structured data that describes a physical, local business: its name, address, phone number, opening hours and location. Adding <strong>schema markup for local business</strong> pages helps Google connect your site to your business entity and can support your visibility in local search and maps.</p>
-<p>This <strong>local business schema generator</strong> includes a <strong>restaurant JSON-LD schema generator</strong> mode plus other common categories like store, cafe, dentist and legal service. Always choose the <em>most specific</em> type that fits your business — <code>Restaurant</code> is better than the generic <code>LocalBusiness</code> when it applies.</p>
-<h3>Required and recommended fields</h3>
+      <h2>Dynamic Shopify product schema, done right</h2>
+<p>Most schema tools output <em>static</em> JSON-LD for a single product. That doesn't scale on Shopify, where one <code>main-product</code> template renders thousands of products. This <strong>Shopify product schema generator</strong> instead builds a <strong>Liquid</strong> snippet: you paste it once, and Shopify fills in <code>{{ product.title }}</code>, the description, price, availability, variants and star ratings live for every product page.</p>
+<h3>How to add it to your theme</h3>
+<ol>
+  <li>Pick your pricing model and fill in your rating fields on the left. The Liquid updates instantly on the right.</li>
+  <li>Copy the snippet and go to <strong>Online Store → Themes → Edit code</strong>.</li>
+  <li>Open <code>layout/theme.liquid</code> and paste the snippet just before the closing <code>&lt;/head&gt;</code> tag. This works on every theme — including newer ones like <strong>Horizon</strong>. Because the snippet is wrapped in <code>{% if template.name == 'product' %}</code>, it only outputs on product pages even though it lives in the site-wide layout.</li>
+  <li>Save, then open a live product URL and test it in Google's <a href="https://search.google.com/test/rich-results" rel="nofollow noopener" target="_blank">Rich Results Test</a>.</li>
+</ol>
+<h3>What the Liquid does</h3>
 <ul>
-  <li><strong>Required:</strong> <code>name</code> and a complete <code>address</code> (<code>PostalAddress</code> with street, city and country).</li>
-  <li><strong>Recommended:</strong> <code>telephone</code>, <code>openingHoursSpecification</code>, <code>geo</code> coordinates, an <code>image</code>, <code>priceRange</code> and your website <code>url</code>.</li>
+  <li><strong>Values are escaped safely</strong> with Shopify's <code>| json</code> filter, so quotes and special characters never break your JSON-LD.</li>
+  <li><strong>Variants</strong> can be emitted as one <code>Offer</code> per variant, a single <code>Offer</code>, or a <code>AggregateOffer</code> price range — whichever suits your products.</li>
+  <li><strong>Availability</strong> switches between <code>InStock</code> and <code>OutOfStock</code> per variant automatically.</li>
+  <li><strong>Product-page only</strong> — the whole block is wrapped in <code>{% if template.name == 'product' %}</code>, so it never fires on collection, cart or home pages.</li>
 </ul>
-<h3>Keep it consistent</h3>
-<p>Your name, address and phone number (NAP) in the markup should exactly match your Google Business Profile and the visible content on your site. Inconsistent details confuse search engines. Once generated, run the markup through our <a href="/schema-markup-validator/">schema validator</a> and add <a href="/organization-schema-generator/">Organization schema</a> on your homepage to round out your entity.</p>
+<h3>Adding star ratings from your reviews app</h3>
+<p>Shopify has no built-in review system, so you supply the <strong>average rating</strong> and <strong>review count</strong> as Liquid expressions — normally the metafields your reviews app exposes. The fields are prefilled with Shopify's native <code>product.metafields.reviews.rating</code> metafields; replace them with your app's (for example a Judge.me, Loox or Yotpo metafield). The generator wraps the <code>aggregateRating</code> in <code>{% if &lt;review count&gt; &gt; 0 %}</code> so it only ever renders when there are genuine reviews — never fabricated. Leave both fields blank to omit ratings entirely.</p>
+<h3>Avoiding duplicate markup</h3>
+<p>Because many Shopify themes already output some <code>Product</code> markup, paste a live product page's HTML into our <a href="/schema-markup-validator/">schema validator</a> first so you don't ship duplicate blocks. For the wider setup, see our <a href="/shopify-schema-markup/">Shopify schema markup guide</a>, the standard <a href="/product-schema-generator/">Product schema generator</a>, and how <a href="/aggregaterating-schema/">AggregateRating schema</a> earns star results.</p>
     </section>
 
     <section class="band">
       <h2 class="center">More schema tools</h2>
       <div class="grid">
         <a class="card" href="/schema-markup-validator/"><h3>Schema Validator</h3><p>Test &amp; check any JSON-LD for errors.</p></a>
-        <a class="card" href="/organization-schema-generator/"><h3>Organization Schema</h3><p>Brand, logo &amp; socials.</p></a>
+        <a class="card" href="/product-schema-generator/"><h3>Product Schema</h3><p>Static JSON-LD version.</p></a>
+        <a class="card" href="/shopify-schema-markup/"><h3>Shopify Schema Guide</h3><p>Full implementation guide.</p></a>
         <a class="card" href="/review-schema-generator/"><h3>Review Schema</h3><p>Star ratings.</p></a>
-        <a class="card" href="/event-schema-generator/"><h3>Event Schema</h3><p>Events &amp; tickets.</p></a>
       </div>
     </section>
 
-    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="/local-business-schema-generator/" id="rate"></div>
+    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="/shopify-product-schema-generator/" id="rate"></div>
   </div>
 </main>
 
@@ -200,7 +210,7 @@
   </div>
 </footer>
 
-<script type="module" src="/assets/js/generators/local-business.js"></script>
+<script type="module" src="/assets/js/generators/shopify-product.js"></script>
 <script type="module" src="/assets/js/rating.js"></script>
 </body>
 </html>

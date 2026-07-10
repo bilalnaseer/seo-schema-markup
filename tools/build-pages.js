@@ -28,6 +28,7 @@ function nav() {
         <div class="dropdown-menu">
           <a href="/faq-schema-generator/">FAQ Schema</a>
           <a href="/product-schema-generator/">Product Schema</a>
+          <a href="/shopify-product-schema-generator/">Shopify Product Schema</a>
           <a href="/article-schema-generator/">Article Schema</a>
           <a href="/local-business-schema-generator/">Local Business Schema</a>
           <a href="/organization-schema-generator/">Organization Schema</a>
@@ -71,6 +72,7 @@ function footer() {
         <ul>
           <li><a href="/faq-schema-generator/">FAQ Schema</a></li>
           <li><a href="/product-schema-generator/">Product Schema</a></li>
+          <li><a href="/shopify-product-schema-generator/">Shopify Product Schema</a></li>
           <li><a href="/article-schema-generator/">Article Schema</a></li>
           <li><a href="/local-business-schema-generator/">Local Business Schema</a></li>
           <li><a href="/organization-schema-generator/">Organization Schema</a></li>
@@ -202,10 +204,10 @@ function generatorPage(p) {
 
       <div class="panel">
         <div class="output-head">
-          <h2>JSON-LD output</h2>
-          <button class="btn btn-ghost btn-sm" id="copyJson">Copy JSON</button>
-          <button class="btn btn-ghost btn-sm" id="copyScript">Copy &lt;script&gt;</button>
-          <button class="btn btn-primary btn-sm" id="downloadJson">Download</button>
+          <h2>${p.liquid ? 'Liquid code for your theme' : 'JSON-LD output'}</h2>
+          <button class="btn btn-ghost btn-sm" id="copyJson">${p.liquid ? 'Copy Liquid' : 'Copy JSON'}</button>
+          ${p.liquid ? '' : '<button class="btn btn-ghost btn-sm" id="copyScript">Copy &lt;script&gt;</button>'}
+          <button class="btn btn-primary btn-sm" id="downloadJson">${p.liquid ? 'Download .liquid' : 'Download'}</button>
         </div>
         <div class="codewrap"><pre class="code"><code id="genCode"></code></pre></div>
         <div class="results" id="genResults"></div>

@@ -261,6 +261,8 @@ section.band.alt { background: var(--bg-alt); border-top: 1px solid var(--border
 .field label .req { color: var(--err); }
 .field label .rec { color: var(--warn); font-weight: 500; font-size: .8rem; }
 .field .hint { font-size: .8rem; color: var(--text-soft); margin: 4px 0 0; }
+.field-check label { display: flex; align-items: center; gap: 9px; margin-bottom: 0; cursor: pointer; }
+.field-check input[type=checkbox] { width: auto; flex: none; margin: 0; accent-color: var(--accent); }
 input[type=text], input[type=url], input[type=number], input[type=email], input[type=date], input[type=datetime-local], textarea, select {
   width: 100%; font: inherit; font-size: .95rem; padding: 10px 12px; border: 1px solid var(--border);
   border-radius: var(--radius-sm); background: var(--bg); color: var(--text);

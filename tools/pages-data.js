@@ -57,7 +57,39 @@ const generators = [
   <li><code>brand</code>, <code>sku</code>, <code>description</code> — recommended details that strengthen the markup.</li>
 </ul>
 <p>Selling on Shopify? See our <a href="/shopify-schema-markup/">Shopify schema markup guide</a> for where to place this in your theme. When you're done, paste your output into the <a href="/schema-markup-validator/">schema validator</a> to confirm it's clean before publishing.</p>`,
-    siblings: [V, card('/review-schema-generator/', 'Review Schema', 'Star ratings for items.'), card('/faq-schema-generator/', 'FAQ Schema', 'FAQ rich results.'), card('/organization-schema-generator/', 'Organization Schema', 'Brand &amp; logo markup.')],
+    siblings: [V, card('/shopify-product-schema-generator/', 'Shopify Product Schema', 'Dynamic Liquid version.'), card('/review-schema-generator/', 'Review Schema', 'Star ratings for items.'), card('/faq-schema-generator/', 'FAQ Schema', 'FAQ rich results.')],
+  },
+  {
+    slug: '/shopify-product-schema-generator/',
+    crumbName: 'Shopify Product Schema Generator',
+    appName: 'Shopify Product Schema Generator',
+    module: '/assets/js/generators/shopify-product.js',
+    liquid: true,
+    title: 'Shopify Product Schema Generator — Dynamic JSON-LD',
+    desc: 'Free Shopify product schema generator. Build dynamic Product JSON-LD (Liquid) with title, price, variants &amp; real ratings for your theme — copy &amp; paste.',
+    h1: 'Shopify Product Schema Generator',
+    lead: 'Generate a <strong>dynamic Product schema</strong> snippet for your Shopify theme. Instead of static values, it outputs <strong>Liquid</strong> that fills in each product&rsquo;s title, description, price, variants and ratings automatically — one snippet covers your whole catalog.',
+    explainer: `<h2>Dynamic Shopify product schema, done right</h2>
+<p>Most schema tools output <em>static</em> JSON-LD for a single product. That doesn't scale on Shopify, where one <code>main-product</code> template renders thousands of products. This <strong>Shopify product schema generator</strong> instead builds a <strong>Liquid</strong> snippet: you paste it once, and Shopify fills in <code>{{ product.title }}</code>, the description, price, availability, variants and star ratings live for every product page.</p>
+<h3>How to add it to your theme</h3>
+<ol>
+  <li>Pick your pricing model and fill in your rating fields on the left. The Liquid updates instantly on the right.</li>
+  <li>Copy the snippet and go to <strong>Online Store → Themes → Edit code</strong>.</li>
+  <li>Open <code>layout/theme.liquid</code> and paste the snippet just before the closing <code>&lt;/head&gt;</code> tag. This works on every theme — including newer ones like <strong>Horizon</strong> that no longer ship a <code>sections/main-product.liquid</code> file. Because the snippet is wrapped in <code>{% if template.name == 'product' %}</code>, it only outputs on product pages even though it lives in the site-wide layout.</li>
+  <li>Save, then open a live product URL and test it in Google's <a href="https://search.google.com/test/rich-results" rel="nofollow noopener" target="_blank">Rich Results Test</a>.</li>
+</ol>
+<h3>What the Liquid does</h3>
+<ul>
+  <li><strong>Values are escaped safely</strong> with Shopify's <code>| json</code> filter, so quotes and special characters never break your JSON-LD.</li>
+  <li><strong>Variants</strong> can be emitted as one <code>Offer</code> per variant, a single <code>Offer</code>, or a <code>AggregateOffer</code> price range — whichever suits your products.</li>
+  <li><strong>Availability</strong> switches between <code>InStock</code> and <code>OutOfStock</code> per variant automatically.</li>
+  <li><strong>Product-page only</strong> — the whole block is wrapped in <code>{% if template.name == 'product' %}</code>, so it never fires on collection, cart or home pages.</li>
+</ul>
+<h3>Adding star ratings from your reviews app</h3>
+<p>Shopify has no built-in review system, so you supply the <strong>average rating</strong> and <strong>review count</strong> as Liquid expressions — normally the metafields your reviews app exposes. The fields are prefilled with Shopify's native <code>product.metafields.reviews.rating</code> metafields; replace them with your app's (for example a Judge.me, Loox or Yotpo metafield). The generator wraps the <code>aggregateRating</code> in <code>{% if &lt;review count&gt; &gt; 0 %}</code> so it only ever renders when there are genuine reviews — never fabricated. Leave both fields blank to omit ratings entirely.</p>
+<h3>Avoiding duplicate markup</h3>
+<p>Because many Shopify themes already output some <code>Product</code> markup, paste a live product page's HTML into our <a href="/schema-markup-validator/">schema validator</a> first so you don't ship duplicate blocks. For the wider setup, see our <a href="/shopify-schema-markup/">Shopify schema markup guide</a>, the standard <a href="/product-schema-generator/">Product schema generator</a>, and how <a href="/aggregaterating-schema/">AggregateRating schema</a> earns star results.</p>`,
+    siblings: [V, card('/product-schema-generator/', 'Product Schema', 'Static JSON-LD version.'), card('/shopify-schema-markup/', 'Shopify Schema Guide', 'Full implementation guide.'), card('/review-schema-generator/', 'Review Schema', 'Star ratings.')],
   },
   {
     slug: '/article-schema-generator/',
