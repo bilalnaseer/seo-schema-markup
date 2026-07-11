@@ -57,20 +57,20 @@ function buildLiquid(v) {
   "@context": "https://schema.org/",
   "@type": "Product",
   "name": {{ product.title | json }},
-  "url": {{ shop.url | append: product.url | json }}`;
+  "url": "{{ shop.url | append: product.url }}"`;
 
   if (v.multipleImages) {
     s += `
   {% if product.images.size > 0 %},
   "image": [
     {%- for image in product.images -%}
-    {{ image | image_url: width: 1200 | prepend: 'https:' | json }}{%- unless forloop.last -%},{%- endunless -%}
+    "{{ image | image_url: width: 1200 | prepend: 'https:' }}"{%- unless forloop.last -%},{%- endunless -%}
     {%- endfor -%}
   ]{% endif %}`;
   } else {
     s += `
   {% if product.featured_image %},
-  "image": {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}{% endif %}`;
+  "image": "{{ product.featured_image | image_url: width: 1200 | prepend: 'https:' }}"{% endif %}`;
   }
 
   if (v.includeDescription) {
@@ -106,7 +106,7 @@ function buildLiquid(v) {
     "price": {{ product.selected_or_first_available_variant.price | divided_by: 100.0 | json }},
     "priceCurrency": {{ shop.currency | json }},
     "availability": {% if product.selected_or_first_available_variant.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
-    "url": {{ shop.url | append: product.url | json }}
+    "url": "{{ shop.url | append: product.url }}"
   }`;
   } else if (v.offerMode === 'aggregate') {
     s += `,
@@ -127,7 +127,7 @@ function buildLiquid(v) {
       "price": {{ variant.price | divided_by: 100.0 | json }},
       "priceCurrency": {{ shop.currency | json }},
       "availability": {% if variant.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
-      "url": {{ shop.url | append: product.url | append: '?variant=' | append: variant.id | json }}{% if variant.sku != blank %},
+      "url": "{{ shop.url | append: product.url | append: '?variant=' | append: variant.id }}"{% if variant.sku != blank %},
       "sku": {{ variant.sku | json }}{% endif %}
     }{%- unless forloop.last -%},{%- endunless -%}
     {%- endfor -%}
