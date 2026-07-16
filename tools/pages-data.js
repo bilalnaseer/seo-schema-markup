@@ -402,7 +402,31 @@ const guides = [
     title: 'Shopify Schema Markup: Implementation Guide (JSON-LD)',
     desc: 'Shopify schema markup implementation guide. Add JSON-LD structured data to your Shopify theme for product, FAQ &amp; breadcrumb rich results — step by step.',
     h1: 'Shopify Schema Markup: Implementation Guide',
+    extraJsonLd: `\n<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Shopify SEO - How To Add Schema Markup [FREE - Without APP]",
+  "description": "A step-by-step Shopify SEO walkthrough showing how to add schema markup (JSON-LD structured data) to your Shopify store for free, without any app — so your products become eligible for price, availability and rating rich results in Google.",
+  "thumbnailUrl": ["https://i.ytimg.com/vi/MNkA_IapQm4/maxresdefault.jpg", "https://i.ytimg.com/vi/MNkA_IapQm4/hqdefault.jpg"],
+  "uploadDate": "2026-07-16T08:00:06-07:00",
+  "duration": "PT16M29S",
+  "contentUrl": "https://www.youtube.com/watch?v=MNkA_IapQm4",
+  "embedUrl": "https://www.youtube.com/embed/MNkA_IapQm4",
+  "publisher": {
+    "@type": "Organization",
+    "name": "WebSensePro",
+    "url": "https://websensepro.com"
+  }
+}
+</script>`,
     body: `<p>Adding <strong>schema markup to Shopify</strong> is one of the highest-ROI structured-data tasks in ecommerce SEO. Done right, your products become eligible for price, availability and rating rich results. This is a practical <strong>Shopify schema markup implementation guide</strong> using JSON-LD structured data.</p>
+<figure class="video-embed">
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/MNkA_IapQm4" title="Shopify SEO - How To Add Schema Markup [FREE - Without APP]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <figcaption>Watch: how to add schema markup to your Shopify store for free, without an app — a walkthrough by WebSensePro.</figcaption>
+</figure>
 <h2>What schema do Shopify stores need?</h2>
 <ul>
 <li><strong>Product</strong> on product pages — <a href="/product-schema-generator/">generate it here</a>.</li>
