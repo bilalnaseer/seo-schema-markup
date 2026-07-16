@@ -117,6 +117,8 @@ node tools/build-sitemap.js   # regenerates sitemap.xml
 - Open Graph + Twitter Card tags (title, description, og:image = `/assets/img/og-default.png`).
 - Semantic HTML5, descriptive alt text, ARIA where needed.
 - Every tool page injects `BreadcrumbList` + `SoftwareApplication` JSON-LD. Generators may also dogfood their own type where genuine (e.g. FAQ page has a real `FAQPage`).
+- **Extra JSON-LD per page:** both generator and guide configs support an optional `extraJsonLd` string (raw `<script type="application/ld+json">…</script>`) that is appended into `<head>`. Use it to add genuine page-specific structured data — e.g. `/how-to-add-schema-markup/` carries a real `VideoObject` for its embedded YouTube walkthrough. Never fabricate values (dates, durations, thumbnails must be real).
+- **Embedding video:** wrap a YouTube iframe in `<figure class="video-embed"><div class="video-frame"><iframe … loading="lazy"></iframe></div><figcaption>…</figcaption></figure>` (responsive 16:9 `.video-embed` component in `main.css`, no layout shift). Pair it with a `VideoObject` via `extraJsonLd`.
 - Internal linking: home → all tools; each tool → validator + 2–3 siblings + relevant guide; guides → tools.
 
 ---
