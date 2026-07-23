@@ -1,6 +1,6 @@
 ---
 title: 'AggregateRating Schema: The Complete Guide to Winning Rich Results in 2026'
-slug: aggregaterating-schema-complete-guide
+slug: https://seoschemamarkup.com/blog/aggregaterating-schema-complete-guide-to-winning-rich-results-2026/
 description: Learn how AggregateRating Schema powers Google star ratings. Step-by-step JSON-LD examples, common mistakes, validation tips, and SEO best practices.
 date: 2026-07-23
 updated: 2026-07-23
