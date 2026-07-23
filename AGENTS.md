@@ -23,6 +23,7 @@ These are non-negotiable. Breaking one is a regression, not a refactor.
 3. **Zero external runtime dependencies / no CDN frameworks.** All JS is hand-written vanilla ES modules. Tiny self-contained helpers only.
 4. **No API keys / secrets in the repo.** AdSense IDs and any keys are added on the deployed site / via environment. Ad slots in markup are empty styled placeholders.
 5. **No fake or hardcoded `aggregateRating` / reviews.** Ratings come only from genuine votes (see §7). If count is 0, omit `aggregateRating` entirely.
+   - **Owner-approved exception (blog posts):** blog posts MAY carry a manually-entered `aggregateRating` via the CMS (`rating_value`/`rating_count`/`best_rating` front-matter → `BlogPosting.aggregateRating` in `build-blog.js`). The site owner accepted the Google manual-action risk. Guardrails that MUST stay: it emits only when a value + a positive count are supplied (blank ⇒ omitted), and the rating is **rendered visibly** on the post. This exception is scoped to blog posts only — do NOT hardcode ratings anywhere else; generators/guides still use genuine votes (§7).
 6. **Speed is sacred.** Target Lighthouse 100 / green CWV. No render-blocking resources, no layout shift, defer non-critical JS.
 7. **No browser storage for tool state.** `localStorage` is used for the **theme toggle only**.
 8. **No thin/duplicate pages.** Every page has unique, useful, original copy.

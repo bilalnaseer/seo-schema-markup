@@ -327,6 +327,8 @@ pre.code code { font-family: inherit; white-space: pre; }
 
 /* Blog */
 .blog-post .post-meta { font-size: .9rem; margin: -.2em 0 1.4em; }
+.blog-post .post-rating { font-size: 1.05rem; margin: -.6em 0 1.4em; display: flex; align-items: center; gap: 6px; }
+.post-rating-star { color: #f5a623; font-size: 1.15em; }
 .blog-post .post-meta a { color: var(--text-soft); }
 .blog-post .post-meta a:hover { color: var(--accent); }
 .post-cover { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); margin: 0 0 1.6em; }

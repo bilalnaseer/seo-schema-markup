@@ -45,5 +45,13 @@ collections:
       - { name: author_url, label: "Author URL (optional)", widget: string, required: false, default: "https://websensepro.com" }
       - { name: image, label: "Cover image (optional)", widget: image, required: false, hint: "Used for the card, social preview and article schema." }
       - { name: tags, label: "Tags (optional)", widget: list, required: false }
+      # --- Aggregate rating (optional) --------------------------------------
+      # ONLY enter ratings that are genuine and shown on the page. Fabricated or
+      # self-serving ratings violate Google's guidelines and can get ALL your
+      # rich results removed. Leave blank to omit rating schema entirely.
+      - { name: rating_value, label: "Aggregate rating value (optional)", widget: number, required: false, value_type: float, min: 0, max: 5, step: 0.1, hint: "⚠ Only use GENUINE ratings shown on the page. Blank = no rating." }
+      - { name: rating_count, label: "Number of ratings (optional)", widget: number, required: false, value_type: int, min: 0, hint: "Total genuine ratings. Blank or 0 omits the rating schema." }
+      - { name: best_rating, label: "Best possible rating", widget: number, required: false, value_type: int, default: 5 }
+      # ----------------------------------------------------------------------
       - { name: draft, label: "Draft (hide from site)", widget: boolean, default: false }
       - { name: body, label: "Post content", widget: markdown }

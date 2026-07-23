@@ -191,11 +191,31 @@ function loadPosts() {
         image: data.image || '',
         tags: Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []),
         draft: String(data.draft) === 'true',
+        rating: {
+          value: data.rating_value != null ? String(data.rating_value).trim() : '',
+          count: data.rating_count != null ? String(data.rating_count).trim() : '',
+          best: data.best_rating != null ? String(data.best_rating).trim() : '',
+        },
         bodyHtml: markdown(body),
       };
     })
     .filter((p) => !p.draft)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+/* Whether a post has a manually-entered, genuine aggregate rating to emit.
+   Owner-approved exception to AGENTS.md §5 (see CHANGELOG / AGENTS §5). Only
+   emits when a value AND a positive count are provided; blank => omitted. */
+function hasRating(p) {
+  return p.rating && p.rating.value !== '' && Number(p.rating.count) > 0 && !isNaN(Number(p.rating.value));
+}
+function aggregateRatingObj(p) {
+  return {
+    '@type': 'AggregateRating',
+    ratingValue: String(p.rating.value),
+    ratingCount: String(p.rating.count),
+    bestRating: p.rating.best !== '' ? String(p.rating.best) : '5',
+  };
 }
 
 /* ---------------- JSON-LD for a post ---------------- */
@@ -215,6 +235,8 @@ function articleJsonLd(p) {
       url: PUBLISHER.url,
       logo: { '@type': 'ImageObject', url: PUBLISHER.logo },
     },
+    // AggregateRating only when the post actually supplies a genuine rating.
+    aggregateRating: hasRating(p) ? aggregateRatingObj(p) : undefined,
     mainEntityOfPage: { '@type': 'WebPage', '@id': SITE + p.url },
   };
   return `<script type="application/ld+json">\n${JSON.stringify(prune(obj), null, 2)}\n</script>`;
@@ -257,6 +279,7 @@ function postPage(p) {
     <article class="prose blog-post">
       <h1>${esc(p.title)}</h1>
       <p class="post-meta muted">${dateLine}</p>
+      ${hasRating(p) ? `<p class="post-rating" aria-label="Rated ${esc(p.rating.value)} out of ${esc(p.rating.best !== '' ? p.rating.best : '5')}"><span class="post-rating-star" aria-hidden="true">★</span> <strong>${esc(p.rating.value)}</strong> <span class="muted">/ ${esc(p.rating.best !== '' ? p.rating.best : '5')} · ${esc(p.rating.count)} rating${Number(p.rating.count) === 1 ? '' : 's'}</span></p>` : ''}
       ${p.image ? `<img class="post-cover" src="${esc(p.image)}" alt="${esc(p.title)}" loading="eager">` : ''}
       ${p.bodyHtml}
     </article>
@@ -342,6 +365,9 @@ function write(rel, html) {
 
 function build() {
   const posts = loadPosts();
+  // Clear /blog/ first so posts deleted or renamed in the CMS don't leave stale
+  // orphan pages behind. Everything under /blog/ is generated, so this is safe.
+  fs.rmSync(OUT_DIR, { recursive: true, force: true });
   fs.mkdirSync(OUT_DIR, { recursive: true });
   write('', indexPage(posts));
   posts.forEach((p) => write(p.slug, postPage(p)));
