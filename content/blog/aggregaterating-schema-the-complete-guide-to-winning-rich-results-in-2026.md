@@ -3,13 +3,13 @@ title: 'AggregateRating Schema: The Complete Guide to Winning Rich Results in 20
 description: Learn how AggregateRating Schema powers Google star ratings. Step-by-step JSON-LD examples, common mistakes, validation tips, and SEO best practices.
 date: 2026-07-23
 updated: 2026-07-23
-author: seoschemamarkup
-author_url: https://seoschemamarkup.com
+author: Bilal Naseer
+author_url: https://websensepro.com
 image: /assets/img/blog/image (21).png
 tags:
   - AggregateRating Schema
 rating_value: 5
-rating_count: 5
+rating_count: 119
 best_rating: 5
 draft: false
 ---
