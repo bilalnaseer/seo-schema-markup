@@ -38,11 +38,12 @@ collections:
     sortable_fields: [date, title]
     fields:
       - { name: title, label: "Title", widget: string }
+      - { name: slug, label: "Permalink (URL slug)", widget: string, required: false, hint: "Optional. The blog post URL is /blog/<this>/. Leave blank to auto-generate from the title. Lowercase letters, numbers and hyphens only." }
       - { name: description, label: "Meta description (for Google & social)", widget: string, required: true, hint: "~150 characters. Shows in search results." }
       - { name: date, label: "Publish date", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
       - { name: updated, label: "Last updated (optional)", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true, required: false }
-      - { name: author, label: "Author name", widget: string, default: "Bilal Naseer" }
-      - { name: author_url, label: "Author URL (optional)", widget: string, required: false, default: "https://websensepro.com" }
+      - { name: author, label: "Author name", widget: string, default: "seoschemamarkup-admin" }
+      - { name: author_url, label: "Author URL (optional)", widget: string, required: false, default: "https://seoschemamarkup.com" }
       - { name: image, label: "Cover image (optional)", widget: image, required: false, hint: "Used for the card, social preview and article schema." }
       - { name: tags, label: "Tags (optional)", widget: list, required: false }
       # --- Aggregate rating (optional) --------------------------------------
