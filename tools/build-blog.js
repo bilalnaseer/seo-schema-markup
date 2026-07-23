@@ -71,6 +71,18 @@ function unquote(s) {
   return s;
 }
 
+/* Slugify a permalink/title into a clean URL slug: lowercase, spaces & other
+   non-alphanumerics collapsed to single hyphens, no leading/trailing hyphens.
+   e.g. "My New Blog Post!" -> "my-new-blog-post". Used for the post URL so the
+   CMS Permalink field can be pasted in as free text and still yield a clean URL. */
+function slugify(s) {
+  return String(s)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 /* ---------------- inline Markdown ---------------- */
 function inline(text) {
   let s = escText(text);
@@ -178,7 +190,7 @@ function loadPosts() {
     .map((file) => {
       const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8');
       const { data, body } = parseFrontMatter(raw);
-      const slug = (data.slug || file.replace(/\.md$/, '')).replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+      const slug = slugify(data.slug || file.replace(/\.md$/, ''));
       return {
         slug,
         url: `/blog/${slug}/`,

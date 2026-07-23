@@ -38,7 +38,7 @@ collections:
     sortable_fields: [date, title]
     fields:
       - { name: title, label: "Title", widget: string }
-      - { name: slug, label: "Permalink (URL slug)", widget: string, required: false, hint: "Optional. The blog post URL is /blog/<this>/. Leave blank to auto-generate from the title. Lowercase letters, numbers and hyphens only." }
+      - { name: slug, label: "Permalink (URL slug)", widget: string, required: false, hint: "Optional. The blog post URL is /blog/<this>/. Paste the title here if you like — it is auto-converted to lowercase with spaces turned into hyphens (e.g. 'My New Post' becomes 'my-new-post'). Leave blank to auto-generate from the title." }
       - { name: description, label: "Meta description (for Google & social)", widget: string, required: true, hint: "~150 characters. Shows in search results." }
       - { name: date, label: "Publish date", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
       - { name: updated, label: "Last updated (optional)", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true, required: false }
