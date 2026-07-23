@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Article Schema Generator — Author &amp; Article JSON-LD</title>
-<meta name="description" content="Free article schema generator with author markup. Create valid Article, BlogPosting &amp; NewsArticle JSON-LD with author, publisher &amp; dates for E-E-A-T.">
-<link rel="canonical" href="https://seoschemamarkup.com/article-schema-generator/">
+<title>Welcome to the SEO Schema Markup Blog — SEO Schema Markup Blog</title>
+<meta name="description" content="Kicking off our blog with practical, no-fluff guides on schema markup, JSON-LD and rich results.">
+<link rel="canonical" href="https://seoschemamarkup.com/blog/welcome-to-the-blog/">
 <meta name="theme-color" content="#5b6cff">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="SEO Schema Markup">
-<meta property="og:title" content="Article Schema Generator — Author &amp; Article JSON-LD">
-<meta property="og:description" content="Free article schema generator with author markup. Create valid Article, BlogPosting &amp; NewsArticle JSON-LD with author, publisher &amp; dates for E-E-A-T.">
-<meta property="og:url" content="https://seoschemamarkup.com/article-schema-generator/">
+<meta property="og:title" content="Welcome to the SEO Schema Markup Blog — SEO Schema Markup Blog">
+<meta property="og:description" content="Kicking off our blog with practical, no-fluff guides on schema markup, JSON-LD and rich results.">
+<meta property="og:url" content="https://seoschemamarkup.com/blog/welcome-to-the-blog/">
 <meta property="og:image" content="https://seoschemamarkup.com/assets/img/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Article Schema Generator — Author &amp; Article JSON-LD">
-<meta name="twitter:description" content="Free article schema generator with author markup. Create valid Article, BlogPosting &amp; NewsArticle JSON-LD with author, publisher &amp; dates for E-E-A-T.">
+<meta name="twitter:title" content="Welcome to the SEO Schema Markup Blog — SEO Schema Markup Blog">
+<meta name="twitter:description" content="Kicking off our blog with practical, no-fluff guides on schema markup, JSON-LD and rich results.">
 <meta name="twitter:image" content="https://seoschemamarkup.com/assets/img/og-default.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,19 +33,37 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seoschemamarkup.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Article Schema Generator", "item": "https://seoschemamarkup.com/article-schema-generator/" }
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seoschemamarkup.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Welcome to the SEO Schema Markup Blog", "item": "https://seoschemamarkup.com/blog/welcome-to-the-blog/" }
   ]
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Article Schema Generator",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Web",
-  "url": "https://seoschemamarkup.com/article-schema-generator/",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "@type": "BlogPosting",
+  "headline": "Welcome to the SEO Schema Markup Blog",
+  "description": "Kicking off our blog with practical, no-fluff guides on schema markup, JSON-LD and rich results.",
+  "datePublished": "2026-07-23T00:00:00.000Z",
+  "dateModified": "2026-07-23T00:00:00.000Z",
+  "author": {
+    "@type": "Person",
+    "name": "Bilal Naseer",
+    "url": "https://websensepro.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "WebSensePro",
+    "url": "https://websensepro.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://seoschemamarkup.com/assets/img/logo-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://seoschemamarkup.com/blog/welcome-to-the-blog/"
+  }
 }
 </script>
 </head>
@@ -95,56 +113,41 @@
 
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Article Schema Generator</nav>
-    
-    <h1>Article &amp; Author Schema Generator</h1>
-    <p class="lead muted" style="max-width:760px">Create valid <strong>Article structured data</strong> with <strong>author schema</strong>, publisher and dates. Choose Article, BlogPosting or NewsArticle and copy the JSON-LD.</p>
-
-    <div class="tool">
-      <div class="panel">
-        <div class="output-head"><h2>Details</h2></div>
-        <form id="genForm" autocomplete="off"></form>
-        <details class="advanced">
-          <summary>Advanced &amp; recommended fields</summary>
-          <div id="genAdvanced"></div>
-        </details>
-      </div>
-
-      <div class="panel">
-        <div class="output-head">
-          <h2>JSON-LD output</h2>
-          <button class="btn btn-ghost btn-sm" id="copyJson">Copy JSON</button>
-          <button class="btn btn-ghost btn-sm" id="copyScript">Copy &lt;script&gt;</button>
-          <button class="btn btn-primary btn-sm" id="downloadJson">Download</button>
-        </div>
-        <div class="codewrap"><pre class="code"><code id="genCode"></code></pre></div>
-        <div class="results" id="genResults"></div>
-      </div>
-    </div>
-
-    <div class="ad-slot" data-format="leaderboard" aria-hidden="true"><!-- Reserved ad slot -->Ad space</div>
-
-    <section class="explainer">
-      <h2>How to use article &amp; author schema</h2>
-<p><strong>Article schema</strong> helps Google understand the details of a news story, blog post or article — the headline, images, when it was published and updated, and crucially, who wrote it. Adding <strong>author schema</strong> (the <code>author</code> property) is one of the clearest ways to signal authorship and support your site's E-E-A-T (experience, expertise, authoritativeness, trust).</p>
-<p>This generator supports three common types. Use <strong>Article</strong> for general content, <strong>BlogPosting</strong> for blog posts, and <strong>NewsArticle</strong> for journalism. The only required property is <code>headline</code>, but you should add an <code>image</code>, a <code>datePublished</code>, the <code>author</code>, and a <code>publisher</code> with a logo for the best results.</p>
-<h3>Author schema done right</h3>
-<p>For <code>schema author</code> markup, set the author as a <code>Person</code> (or <code>Organization</code>) and, where possible, add a <code>url</code> pointing to a real author bio page. That URL helps Google connect the article to a verifiable author entity. The publisher should be the <code>Organization</code> that owns the site, with a <code>logo</code> as an <code>ImageObject</code>.</p>
-<h3>Dates matter</h3>
-<p>Include both <code>datePublished</code> and <code>dateModified</code> in ISO 8601 format. Keeping <code>dateModified</code> accurate signals freshness when you update content. After generating your <strong>article structured data</strong>, validate it with our <a href="/schema-markup-validator/">schema checker</a>, and pair it with <a href="/breadcrumb-schema-generator/">breadcrumb schema</a> for an even richer result.</p>
-    </section>
-
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Welcome to the SEO Schema Markup Blog</nav>
+    <article class="prose blog-post">
+      <h1>Welcome to the SEO Schema Markup Blog</h1>
+      <p class="post-meta muted"><time datetime="2026-07-23T00:00:00.000Z">July 23, 2026</time> · <span>by <a href="https://websensepro.com">Bilal Naseer</a></span></p>
+      
+      <p>Welcome to the <strong>SEO Schema Markup</strong> blog. This is where we'll share practical, no-fluff guides on structured data, JSON-LD and earning rich results in Google Search.</p>
+<h2>What to expect</h2>
+<p>We'll keep posts short and actionable. Topics we plan to cover:</p>
+<ul>
+  <li>Step-by-step schema markup tutorials for real platforms</li>
+  <li>Common structured-data mistakes (and how to fix them)</li>
+  <li>How rich results actually show up in search</li>
+  <li>Updates when Google changes its structured-data guidelines</li>
+</ul>
+<h2>Start with the tools</h2>
+<p>If you're here to <em>do</em> rather than read, jump straight into a generator:</p>
+<ul>
+  <li><a href="/faq-schema-generator/">FAQ Schema Generator</a> for FAQ rich results</li>
+  <li><a href="/product-schema-generator/">Product Schema Generator</a> for price, availability and ratings</li>
+  <li><a href="/schema-markup-validator/">Schema Markup Validator</a> to check any JSON-LD</li>
+</ul>
+<p>New to structured data? Start with <a href="/what-is-schema-markup/">what is schema markup</a>.</p>
+<blockquote>Everything on this site is free and open source. No signup, no limits.</blockquote>
+<p>Thanks for reading — more soon.</p>
+    </article>
+    <div class="ad-slot" data-format="inline" aria-hidden="true"><!-- Reserved ad slot -->Ad space</div>
     <section class="band">
-      <h2 class="center">More schema tools</h2>
+      <h2 class="center">Generate your schema markup</h2>
       <div class="grid">
-        <a class="card" href="/schema-markup-validator/"><h3>Schema Validator</h3><p>Test &amp; check any JSON-LD for errors.</p></a>
+        <a class="card" href="/schema-markup-validator/"><h3>Schema Validator</h3><p>Test any JSON-LD.</p></a>
         <a class="card" href="/faq-schema-generator/"><h3>FAQ Schema</h3><p>FAQ rich results.</p></a>
-        <a class="card" href="/breadcrumb-schema-generator/"><h3>Breadcrumb Schema</h3><p>Show breadcrumb trails.</p></a>
-        <a class="card" href="/organization-schema-generator/"><h3>Organization Schema</h3><p>Publisher &amp; logo.</p></a>
+        <a class="card" href="/product-schema-generator/"><h3>Product Schema</h3><p>Price &amp; ratings.</p></a>
+        <a class="card" href="/article-schema-generator/"><h3>Article Schema</h3><p>Author &amp; dates.</p></a>
       </div>
     </section>
-
-    <div class="rating-widget" style="justify-content: center; margin: 40px 0 20px;" data-page="/article-schema-generator/" id="rate"></div>
   </div>
 </main>
 
@@ -199,7 +202,6 @@
   </div>
 </footer>
 
-<script type="module" src="/assets/js/generators/article.js"></script>
-<script type="module" src="/assets/js/rating.js"></script>
+<script type="module">import { boot } from '/assets/js/shared.js'; boot();</script>
 </body>
 </html>
