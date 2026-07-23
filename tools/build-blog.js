@@ -230,8 +230,24 @@ function aggregateRatingObj(p) {
   };
 }
 
-/* ---------------- JSON-LD for a post ---------------- */
+/* ---------------- JSON-LD for a post ----------------
+   Owner decision: when a post carries a genuine, manually-entered rating we emit
+   the rating on a CreativeWorkSeries node (name = post title) and DROP the
+   BlogPosting entirely. Google rejects aggregateRating on BlogPosting ("Invalid
+   object type for field <parent_node>"), but CreativeWorkSeries IS a supported
+   review-snippet type, so this is valid and eligible for star rich results. It
+   matches the CreativeWorkSeries pattern rating.js already uses on guide pages.
+   Posts without a rating still get the normal BlogPosting for Article SEO. */
 function articleJsonLd(p) {
+  if (hasRating(p)) {
+    const obj = {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWorkSeries',
+      name: p.title,
+      aggregateRating: aggregateRatingObj(p),
+    };
+    return `<script type="application/ld+json">\n${JSON.stringify(prune(obj), null, 2)}\n</script>`;
+  }
   const obj = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -247,8 +263,6 @@ function articleJsonLd(p) {
       url: PUBLISHER.url,
       logo: { '@type': 'ImageObject', url: PUBLISHER.logo },
     },
-    // AggregateRating only when the post actually supplies a genuine rating.
-    aggregateRating: hasRating(p) ? aggregateRatingObj(p) : undefined,
     mainEntityOfPage: { '@type': 'WebPage', '@id': SITE + p.url },
   };
   return `<script type="application/ld+json">\n${JSON.stringify(prune(obj), null, 2)}\n</script>`;
