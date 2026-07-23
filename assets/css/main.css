@@ -325,6 +325,16 @@ pre.code code { font-family: inherit; white-space: pre; }
 .prose th, .prose td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; }
 .prose th { background: var(--bg-alt); }
 
+/* Blog */
+.blog-post .post-meta { font-size: .9rem; margin: -.2em 0 1.4em; }
+.blog-post .post-meta a { color: var(--text-soft); }
+.blog-post .post-meta a:hover { color: var(--accent); }
+.post-cover { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); margin: 0 0 1.6em; }
+.blog-grid { margin-top: 24px; }
+.blog-card { display: flex; flex-direction: column; }
+.blog-card-cover { width: calc(100% + 40px); margin: -20px -20px 14px; border-radius: var(--radius) var(--radius) 0 0; aspect-ratio: 16 / 9; object-fit: cover; }
+.blog-card-meta { font-size: .82rem; color: var(--text-soft); margin: 0 0 8px; }
+
 /* Responsive video embed (16:9, no layout shift) */
 .video-embed { margin: 1.6em 0; }
 .video-embed .video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--bg-alt); }

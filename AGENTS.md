@@ -65,17 +65,29 @@ assets/js/rating.js               Async ratings widget (OPT-IN, v1.1, see §7).
 functions/api/rating.js           Cloudflare Pages Function for genuine ratings
                                   (KV namespace binding "RATINGS"). OPT-IN.
 
+tools/chrome.js                   ⭐ SINGLE SOURCE for GENERATED-page chrome
+                                  (head/nav/footer/breadcrumb). Used by BOTH
+                                  build-pages.js and build-blog.js.
 tools/build-pages.js              OPTIONAL dev script: generates the GENERATED
-                                  pages from shared templates.
+                                  generator/guide/lead-gen pages.
 tools/pages-data.js               Content/SEO copy for generated pages.
-tools/build-sitemap.js            OPTIONAL: regenerates sitemap.xml.
+tools/build-blog.js               Builds /blog/ (index + posts) from Markdown.
+tools/build-sitemap.js            OPTIONAL: regenerates sitemap.xml (tools +
+                                  guides + blog posts).
+
+/blog/                            Blog index + posts (GENERATED from Markdown).
+content/blog/*.md                 Blog post SOURCE (front-matter + Markdown),
+                                  written by the team via Sveltia CMS.
+/admin/                           Sveltia CMS (index.html + config.yml +
+                                  vendored sveltia-cms.js). noindex. See
+                                  BLOG-SETUP.md for OAuth/Worker/Cloudflare.
 
 robots.txt · sitemap.xml · site.webmanifest · favicon.svg/.ico
 assets/img/og-default.(svg|png) · logo-512.png · apple-touch-icon.png
 ```
 
 ### Shared chrome (nav/footer/head)
-Nav and footer are **static HTML duplicated in every page** on purpose — crawlable internal links + zero JS dependency + no layout shift. For generated pages the chrome lives in `tools/build-pages.js`; for hand-written pages it's inline. **If you change the nav or footer, update it in `tools/build-pages.js` AND in the 3 hand-written pages (`index.html`, `schema-markup-validator/index.html`, `404.html`), then re-run the build script.**
+Nav and footer are **static HTML duplicated in every page** on purpose — crawlable internal links + zero JS dependency + no layout shift. For generated pages (generators, guides AND blog) the chrome lives in **`tools/chrome.js`**; for hand-written pages it's inline. **If you change the nav or footer, update it in `tools/chrome.js` AND in the 3 hand-written pages (`index.html`, `schema-markup-validator/index.html`, `404.html`), then re-run `build-pages.js` AND `build-blog.js`.**
 
 ---
 
@@ -84,12 +96,16 @@ Nav and footer are **static HTML duplicated in every page** on purpose — crawl
 Generator, guide, and lead-gen pages are **NOT hand-edited**. They are generated:
 
 ```bash
-node tools/build-pages.js     # regenerates all GENERATED pages
-node tools/build-sitemap.js   # regenerates sitemap.xml
+node tools/build-pages.js     # regenerates generator/guide/lead-gen pages
+node tools/build-blog.js      # regenerates /blog/ (index + posts) from content/blog/*.md
+node tools/build-sitemap.js   # regenerates sitemap.xml (tools + guides + blog)
 ```
 
+On Cloudflare Pages these run as the deploy **build command** (see BLOG-SETUP.md), so team posts published via the CMS become static HTML automatically. The committed public site is still pure static HTML with zero runtime deps.
+
 - **To change page copy / titles / meta / explainers / guide bodies:** edit `tools/pages-data.js`, then re-run `build-pages.js`.
-- **To change shared templates (head/nav/footer/page layout):** edit `tools/build-pages.js`, then re-run it.
+- **To change shared templates (head/nav/footer/page layout):** edit `tools/chrome.js` (shared) or `tools/build-pages.js` (page bodies), then re-run the builds.
+- **Blog posts are NOT hand-edited HTML** — edit `content/blog/*.md` (or use the CMS), then re-run `build-blog.js`. Editing `/blog/**/index.html` directly is lost on the next build.
 - **Editing a generated `index.html` directly will be lost** the next time the script runs.
 - **Hand-written pages** (`index.html`, `schema-markup-validator/`, `404.html`) are edited directly — they are NOT produced by the script.
 
