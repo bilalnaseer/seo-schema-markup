@@ -61,131 +61,127 @@ None of this makes Novamira a bad tool for its narrow use case. But for the vast
 
 ## **Feature-by-Feature Comparison**
 
-<div class="table-wrapper">
+<table>
 
-  <table>
+  <thead>
 
-    <thead>
+    <tr>
 
-      <tr>
+      <th>Feature</th>
 
-        <th>Feature</th>
+      <th>WSP MCP</th>
 
-        <th>WSP MCP</th>
+      <th>Novamira</th>
 
-        <th>Novamira</th>
+    </tr>
 
-      </tr>
+  </thead>
 
-    </thead>
+  <tbody>
 
-    <tbody>
+    <tr>
 
-      <tr>
+      <td><strong>Price</strong></td>
 
-        <td><strong>Price</strong></td>
+      <td>100% free, forever</td>
 
-        <td>100% free, forever</td>
+      <td>Free core only; full features from \~€49–€129/year</td>
 
-        <td>Free core only; full features from \~€49–€129/year</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>License</strong></td>
 
-        <td><strong>License</strong></td>
+      <td>Fully open source (MIT)</td>
 
-        <td>Fully open source (MIT)</td>
+      <td>Free tier only; Pro is closed and paid</td>
 
-        <td>Free tier only; Pro is closed and paid</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Access Model</strong></td>
 
-        <td><strong>Access Model</strong></td>
+      <td>Curated, permission-scoped abilities</td>
 
-        <td>Curated, permission-scoped abilities</td>
+      <td>Full PHP, database, and file-level access</td>
 
-        <td>Full PHP, database, and file-level access</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Safe for Live Sites</strong></td>
 
-        <td><strong>Safe for Live Sites</strong></td>
+      <td>Yes, designed for production use</td>
 
-        <td>Yes, designed for production use</td>
+      <td>Vendor recommends development/staging use</td>
 
-        <td>Vendor recommends development/staging use</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Setup Difficulty</strong></td>
 
-        <td><strong>Setup Difficulty</strong></td>
+      <td>Very low - install and connect</td>
 
-        <td>Very low - install and connect</td>
+      <td>Low to moderate; more setup required</td>
 
-        <td>Low to moderate; more setup required</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Coding Knowledge Required</strong></td>
 
-        <td><strong>Coding Knowledge Required</strong></td>
+      <td>None</td>
 
-        <td>None</td>
+      <td>Helpful and often necessary</td>
 
-        <td>Helpful and often necessary</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>WordPress Coverage</strong></td>
 
-        <td><strong>WordPress Coverage</strong></td>
+      <td>Posts, pages, media, WooCommerce, Yoast, ACF, Elementor</td>
 
-        <td>Posts, pages, media, WooCommerce, Yoast, ACF, Elementor</td>
+      <td>Site-wide code access; builder tools require Pro</td>
 
-        <td>Site-wide code access; builder tools require Pro</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Support</strong></td>
 
-        <td><strong>Support</strong></td>
+      <td>Free tutorials + GitHub support</td>
 
-        <td>Free tutorials + GitHub support</td>
+      <td>Documentation, community, paid support options</td>
 
-        <td>Documentation, community, paid support options</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Long-Term Cost</strong></td>
 
-        <td><strong>Long-Term Cost</strong></td>
+      <td>None</td>
 
-        <td>None</td>
+      <td>Recurring or lifetime licensing fee</td>
 
-        <td>Recurring or lifetime licensing fee</td>
+    </tr>
 
-      </tr>
+    <tr>
 
-      <tr>
+      <td><strong>Best Suited For</strong></td>
 
-        <td><strong>Best Suited For</strong></td>
+      <td>Users, businesses, freelancers, agencies</td>
 
-        <td>Users, businesses, freelancers, agencies</td>
+      <td>Developers needing deeper code access</td>
 
-        <td>Developers needing deeper code access</td>
+    </tr>
 
-      </tr>
+  </tbody>
 
-    </tbody>
-
-  </table>
-
-</div>
+</table>
 
 ## **Pros and Cons**
 
