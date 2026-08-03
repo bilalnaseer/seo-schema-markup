@@ -61,7 +61,7 @@ None of this makes Novamira a bad tool for its narrow use case. But for the vast
 
 ## **Feature-by-Feature Comparison**
 
-![Novamira vs WSP MCP](/assets/img/blog/ChatGPT%20Image%20Aug%203%2C%202026%2C%2006_28_48%20PM.png "Novamira vs WSP MCP")
+![Novamira vs WSP MCP](/assets/img/blog/ChatGPT%20Image%20Aug%203%2C%202026%2C%2006_28_48%20PM.webp "Novamira vs WSP MCP")
 
 ## **Pros and Cons**
 
