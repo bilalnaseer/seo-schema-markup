@@ -61,133 +61,134 @@ None of this makes Novamira a bad tool for its narrow use case. But for the vast
 
 ## **Feature-by-Feature Comparison**
 
-<table>
-
-  <thead>
-
-    <tr>
-
-      <th>Feature</th>
-
-      <th>WSP MCP</th>
-
-      <th>Novamira</th>
-
-    </tr>
-
-  </thead>
-
-  <tbody>
-
-    <tr>
-
-      <td><strong>Price</strong></td>
-
-      <td>100% free, forever</td>
-
-      <td>Free core only; full features from \~€49–€129/year</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>License</strong></td>
-
-      <td>Fully open source (MIT)</td>
-
-      <td>Free tier only; Pro is closed and paid</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Access Model</strong></td>
-
-      <td>Curated, permission-scoped abilities</td>
-
-      <td>Full PHP, database, and file-level access</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Safe for Live Sites</strong></td>
-
-      <td>Yes, designed for production use</td>
-
-      <td>Vendor recommends development/staging use</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Setup Difficulty</strong></td>
-
-      <td>Very low - install and connect</td>
-
-      <td>Low to moderate; more setup required</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Coding Knowledge Required</strong></td>
-
-      <td>None</td>
-
-      <td>Helpful and often necessary</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>WordPress Coverage</strong></td>
-
-      <td>Posts, pages, media, WooCommerce, Yoast, ACF, Elementor</td>
-
-      <td>Site-wide code access; builder tools require Pro</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Support</strong></td>
-
-      <td>Free tutorials + GitHub support</td>
-
-      <td>Documentation, community, paid support options</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Long-Term Cost</strong></td>
-
-      <td>None</td>
-
-      <td>Recurring or lifetime licensing fee</td>
-
-    </tr>
-
-    <tr>
-
-      <td><strong>Best Suited For</strong></td>
-
-      <td>Users, businesses, freelancers, agencies</td>
-
-      <td>Developers needing deeper code access</td>
-
-    </tr>
-
-  </tbody>
-
-</table>
-
 ## **Pros and Cons**
 
-**WSP MCP**
+`<div style="overflow-x:auto;">`
 
-- ✅ Zero cost, at every tier, forever
+`<table style="width:100%; border-collapse: collapse; margin: 20px 0; font-family: sans-serif; font-size: 14px; border: 1px solid #444; color: #fff;">`
+
+`  <thead>`
+
+`    <tr style="background-color: #333; text-align: left;">`
+
+`      <th style="padding: 12px; border: 1px solid #444;">Feature</th>`
+
+`      <th style="padding: 12px; border: 1px solid #444;">WSP MCP</th>`
+
+`      <th style="padding: 12px; border: 1px solid #444;">Novamira</th>`
+
+`    </tr>`
+
+`  </thead>`
+
+`  <tbody>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Price</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">100% free, forever</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Free core only; full features from €49–€129/year</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>License</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Fully open source (MIT)</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Free tier only; Pro is closed and paid</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Access model</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Curated, permission-scoped abilities</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Full PHP, database, and file-level access</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Safe for live sites</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Yes, by design</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Vendor recommends dev/staging only</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Setup difficulty</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Very low - install and connect</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Low to moderate; more setup for Pro features</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Coding knowledge</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">None</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Helpful, often necessary for Pro</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>WP-native coverage</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Posts, pages, media, WooCommerce, Yoast, ACF, Elementor</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Site-wide code access; builder tools gated behind Pro</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Support</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Free video tutorials + active GitHub</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Docs, community group, paid support tiers</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Long-term cost</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">None, ever</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Recurring or lifetime licensing fee</td>`
+
+`    </tr>`
+
+`    <tr>`
+
+`      <td style="padding: 12px; border: 1px solid #444;"><strong>Best suited for</strong></td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Everyday WordPress users, agencies, businesses</td>`
+
+`      <td style="padding: 12px; border: 1px solid #444;">Developers comfortable with dev/staging risk</td>`
+
+`    </tr>`
+
+`  </tbody>`
+
+`</table>`
+
+`</div>`
+
 - ✅ Purpose-built for the WordPress work people actually do
 - ✅ Safe enough to trust on a live production site
 - ✅ No coding background needed
