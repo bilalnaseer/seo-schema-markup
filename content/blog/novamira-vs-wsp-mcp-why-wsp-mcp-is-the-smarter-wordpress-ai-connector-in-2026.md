@@ -61,7 +61,133 @@ None of this makes Novamira a bad tool for its narrow use case. But for the vast
 
 ## **Feature-by-Feature Comparison**
 
-**<table style="width:100%; border-collapse:collapse; margin:20px 0;"><thead><tr style="background-color:#f2f2f2;"><th style="border:1px solid #ddd; padding:10px; text-align:left;">Feature</th><th style="border:1px solid #ddd; padding:10px; text-align:left;">WSP MCP</th><th style="border:1px solid #ddd; padding:10px; text-align:left;">Novamira</th></tr></thead><tbody><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Price</strong></td><td style="border:1px solid #ddd; padding:10px;">100% free, forever</td><td style="border:1px solid #ddd; padding:10px;">Free core only; full features from \~€49–€129/year</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>License</strong></td><td style="border:1px solid #ddd; padding:10px;">Fully open source (MIT)</td><td style="border:1px solid #ddd; padding:10px;">Free tier only; Pro is closed and paid</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Access Model</strong></td><td style="border:1px solid #ddd; padding:10px;">Curated, permission-scoped abilities</td><td style="border:1px solid #ddd; padding:10px;">Full PHP, database, and file-level access</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Safe for Live Sites</strong></td><td style="border:1px solid #ddd; padding:10px;">Yes, designed for production use</td><td style="border:1px solid #ddd; padding:10px;">Vendor recommends development/staging use</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Setup Difficulty</strong></td><td style="border:1px solid #ddd; padding:10px;">Very low - install and connect</td><td style="border:1px solid #ddd; padding:10px;">Low to moderate; more setup required</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Coding Knowledge Required</strong></td><td style="border:1px solid #ddd; padding:10px;">None</td><td style="border:1px solid #ddd; padding:10px;">Helpful and often necessary</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>WordPress Coverage</strong></td><td style="border:1px solid #ddd; padding:10px;">Posts, pages, media, WooCommerce, Yoast, ACF, Elementor</td><td style="border:1px solid #ddd; padding:10px;">Site-wide code access; builder tools require Pro</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Support</strong></td><td style="border:1px solid #ddd; padding:10px;">Free tutorials + GitHub support</td><td style="border:1px solid #ddd; padding:10px;">Documentation, community, paid support options</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Long-Term Cost</strong></td><td style="border:1px solid #ddd; padding:10px;">None</td><td style="border:1px solid #ddd; padding:10px;">Recurring or lifetime licensing fee</td></tr><tr><td style="border:1px solid #ddd; padding:10px;"><strong>Best Suited For</strong></td><td style="border:1px solid #ddd; padding:10px;">Users, businesses, freelancers, agencies</td><td style="border:1px solid #ddd; padding:10px;">Developers needing deeper code access</td></tr></tbody></table>**
+**export const Table = () => (**
+
+  **<table>**
+
+    **<thead>**
+
+      **<tr>**
+
+        **<th>Feature</th>**
+
+        **<th>WSP MCP</th>**
+
+        **<th>Novamira</th>**
+
+      **</tr>**
+
+    **</thead>**
+
+    **<tbody>**
+
+      **<tr>**
+
+        **<td><strong>Price</strong></td>**
+
+        **<td>100% free, forever</td>**
+
+        **<td>Free core only; full features from \~€49–€129/year</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>License</strong></td>**
+
+        **<td>Fully open source (MIT)</td>**
+
+        **<td>Free tier only; Pro is closed and paid</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Access Model</strong></td>**
+
+        **<td>Curated, permission-scoped abilities</td>**
+
+        **<td>Full PHP, database, and file-level access</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Safe for Live Sites</strong></td>**
+
+        **<td>Yes, designed for production use</td>**
+
+        **<td>Vendor recommends development/staging use</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Setup Difficulty</strong></td>**
+
+        **<td>Very low - install and connect</td>**
+
+        **<td>Low to moderate; more setup required</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Coding Knowledge Required</strong></td>**
+
+        **<td>None</td>**
+
+        **<td>Helpful and often necessary</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>WordPress Coverage</strong></td>**
+
+        **<td>Posts, pages, media, WooCommerce, Yoast, ACF, Elementor</td>**
+
+        **<td>Site-wide code access; builder tools require Pro</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Support</strong></td>**
+
+        **<td>Free tutorials + GitHub support</td>**
+
+        **<td>Documentation, community, paid support options</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Long-Term Cost</strong></td>**
+
+        **<td>None</td>**
+
+        **<td>Recurring or lifetime licensing fee</td>**
+
+      **</tr>**
+
+      **<tr>**
+
+        **<td><strong>Best Suited For</strong></td>**
+
+        **<td>Users, businesses, freelancers, agencies</td>**
+
+        **<td>Developers needing deeper code access</td>**
+
+      **</tr>**
+
+    **</tbody>**
+
+  **</table>**
+
+**);**
+
+**<Table />**
 
 ## **Pros and Cons**
 
