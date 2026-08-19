@@ -61,7 +61,7 @@ None of this makes Novamira a bad tool for its narrow use case. But for the vast
 
 ## **Feature-by-Feature Comparison**
 
-![Novamira vs WSP MCP](/assets/img/blog/WSP-MCP-vs-Novamira-Which-WordPress-AI-Connector-Wins.jpeg "Novamira vs WSP MCP")
+[![Novamira vs WSP MCP](/assets/img/blog/WSP-MCP-vs-Novamira-Which-WordPress-AI-Connector-Wins.jpeg "Novamira vs WSP MCP")](WSP-MCP-vs-Novamira-Which-WordPress-AI-Connector-Wins)
 
 ## **Pros and Cons**
 
