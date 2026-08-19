@@ -6,7 +6,7 @@ date: 2026-08-18
 updated: 2026-08-18
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/schema-markup-tools.webp
+image: /assets/img/blog/Top 10 SEO Schema Markup Tools.jpg
 tags:
   - Top 10 SEO Schema Markup Tools
 rating_value: 5
