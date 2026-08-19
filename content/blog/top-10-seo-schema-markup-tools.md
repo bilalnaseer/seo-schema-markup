@@ -6,7 +6,7 @@ date: 2026-08-18
 updated: 2026-08-18
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/ChatGPT Image Aug 18, 2026, 07_58_45 PM.png
+image: /assets/img/blog/schema-markup-tools.webp
 tags:
   - Top 10 SEO Schema Markup Tools
 rating_value: 5
