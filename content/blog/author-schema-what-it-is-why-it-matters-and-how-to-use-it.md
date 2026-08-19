@@ -101,7 +101,7 @@ Google cross-references the same URLs to verify and confirm the author's identit
 
 ## **Author Schema vs. Person Schema**
 
-![Author Schema vs. Person Schema](/assets/img/blog/ChatGPT%20Image%20Aug%206%2C%202026%2C%2006_44_35%20PM.png)
+![Author Schema vs. Person Schema](/assets/img/blog/ChatGPT%20Image%20Aug%206,%202026,%2006_44_35%20PM.png)
 
 In practice, Author Schema _uses_ the Person schema type. The distinction matters because it helps you apply the right context-especially when nesting it inside Article or NewsArticle structured data.
 
