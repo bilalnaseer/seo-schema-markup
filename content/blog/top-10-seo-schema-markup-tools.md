@@ -100,7 +100,7 @@ If you're just starting out, a generator paired with the Rich Results Test cover
 
 ***
 
-## **Final Thoughts**
+### **Final Thoughts**
 
 Structured data helps search engines more reliably connect your content to the right queries. It doesn't replace strong content or solid technical fundamentals, but it's a worthwhile addition—particularly for pages where rich results could improve how your listing appears in Search.
 
