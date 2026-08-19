@@ -6,7 +6,7 @@ date: 2026-08-12
 updated: 2026-08-12
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/ChatGPT Image Aug 12, 2026, 04_00_45 PM.png
+image: /assets/img/blog/Product Classification Schema for E-Commerce.jpeg
 tags: []
 rating_value: 5
 rating_count: 562
