@@ -6,7 +6,7 @@ date: 2026-08-03
 updated: 2026-08-03
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/ChatGPT Image Aug 3, 2026, 12_32_26 PM.png
+image: /assets/img/blog/Novamira vs WSP MCP.jpeg
 tags:
   - Novamira vs WSP MCP
 rating_value: 4.9
