@@ -1,5 +1,5 @@
 ---
-title: 'Product Classification Schema: Structure Your E-Commerce Products for SEO'
+title: 'Product Classification Schema: Boost E-Commerce SEO'
 slug: product-classification-schema-e-commerce-best-guide
 description: Learn how e-commerce product classification maps to Product Schema. Covers variants, SKUs, GTINs, common errors, and how to structure data before generating markup.
 date: 2026-08-12
