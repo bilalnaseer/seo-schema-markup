@@ -6,7 +6,7 @@ date: 2026-08-06
 updated: 2026-08-06
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/ChatGPT Image Aug 6, 2026, 06_53_26 PM.png
+image: /assets/img/blog/Author Schema What It Is, Why It Matters, and How to Use It.jpeg
 tags: []
 rating_value: 5
 rating_count: 789
