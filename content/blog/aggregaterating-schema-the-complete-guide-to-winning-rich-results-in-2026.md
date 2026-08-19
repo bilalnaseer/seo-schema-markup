@@ -6,7 +6,7 @@ date: 2026-07-23
 updated: 2026-07-23
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/image (21).png
+image: /assets/img/blog/Aggregate-Rating-Schema.jpg
 tags:
   - AggregateRating Schema
 rating_value: 5
