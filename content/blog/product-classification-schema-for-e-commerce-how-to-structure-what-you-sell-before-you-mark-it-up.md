@@ -6,7 +6,7 @@ date: 2026-08-12
 updated: 2026-08-12
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/Product Classification Schema for E-Commerce.jpeg
+image: /assets/img/blog/Product-Classification-Schema-for-E-Commerce.jpeg
 tags:
   - Product Classification Schema
 rating_value: 5
