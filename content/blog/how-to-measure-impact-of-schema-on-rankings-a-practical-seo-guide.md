@@ -6,7 +6,7 @@ date: 2026-08-13
 updated: 2026-08-13
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/schema_blog_featured_image.png
+image: /assets/img/blog/How-to-Measure-Impact-of-Schema-on-Rankings.png
 tags:
   - How to Measure Impact of Schema on Rankings
 rating_value: 4.9
