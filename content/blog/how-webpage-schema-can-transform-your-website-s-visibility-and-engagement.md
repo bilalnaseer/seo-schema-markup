@@ -6,7 +6,7 @@ date: 2026-07-28
 updated: ''
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/webpage_schema_header.png
+image: /assets/img/blog/Webpage-Schema.png
 tags:
   - Webpage Schema
 rating_value: 5
