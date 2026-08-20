@@ -6,7 +6,7 @@ date: 2026-08-06
 updated: 2026-08-06
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/Author Schema What It Is, Why It Matters, and How to Use It.jpeg
+image: /assets/img/blog/author-schema.jpeg
 tags:
   - Author Schema
 rating_value: 5
