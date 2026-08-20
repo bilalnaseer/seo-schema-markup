@@ -6,7 +6,7 @@ date: 2026-08-03
 updated: 2026-08-03
 author: seoschemamarkup-admin
 author_url: https://seoschemamarkup.com
-image: /assets/img/blog/Novamira vs WSP MCP.jpeg
+image: /assets/img/blog/Novamira_vs_WSP_MCP_ Which_WordPress_AI_Connector_Wins.jpeg
 tags:
   - Novamira vs WSP MCP
 rating_value: 4.9
