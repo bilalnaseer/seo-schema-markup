@@ -55,7 +55,7 @@ In a catalog with thousands of products, these attributes are what separate one 
 
 Once a product's attributes are clearly defined, mapping them to Schema.org Product properties is a logical process:
 
-[![Product Classification Schema](/assets/img/blog/TurningProductClassificationIntoStructuredDat.jpeg "Product Classification Schema")](Turning-Product-Classification-Into-Structured-Data)
+[![Product Classification Schema](/assets/img/blog/Turning-Product-Classification-Into-Structured-Data.png "Product Classification Schema")](Turning-Product-Classification-Into-Structured-Data)
 
 designed to reflect real product data — not approximate it. Each property should correspond to information that's actually present and visible on the product page. Marking up a price that doesn't appear on the page, or a rating that isn't displayed to shoppers, creates a disconnect between the structured data and the page content.
 
