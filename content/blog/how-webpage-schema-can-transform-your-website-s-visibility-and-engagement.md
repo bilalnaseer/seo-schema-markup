@@ -1,5 +1,5 @@
 ---
-title: 'Webpage Schema: Boost Your Website’s Visibility & Engagement'
+title: 'Webpage Schema: Boost Your Website’s Visibility'
 slug: ''
 description: Learn how webpage schema boosts SEO, unlocks rich snippets, and improves user engagement. Discover implementation tips with SEO Schema Markup.
 date: 2026-07-28
