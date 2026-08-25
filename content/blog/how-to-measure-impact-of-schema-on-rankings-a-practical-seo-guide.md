@@ -1,5 +1,5 @@
 ---
-title: 'How to Measure Impact of Schema on Rankings: Practical SEO Guide'
+title: 'How to Measure Impact of Schema on Rankings: Guide'
 slug: how-to-measure-impact-of-schema-on-rankings
 description: Does schema markup really affect rankings? Learn how to measure its true SEO impact using Google Search Console, rich results data, and CTR tracking.
 date: 2026-08-13
