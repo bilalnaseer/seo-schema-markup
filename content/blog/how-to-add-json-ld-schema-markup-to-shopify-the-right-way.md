@@ -1,5 +1,5 @@
 ---
-title: How to Add JSON-LD Schema Markup to Shopify (The Right Way)
+title: How to Add JSON-LD Schema Markup to Shopify
 slug: shopify-schema-markup-implementation-guide-json-ld
 description: Stop guessing where JSON-LD goes in Shopify. This guide covers dynamic Liquid code, product variants, duplicate schema fixes, and how to validate before you go live.
 date: 2026-08-21
