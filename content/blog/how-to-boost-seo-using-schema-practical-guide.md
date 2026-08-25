@@ -69,9 +69,6 @@ Use the[ schema markup validator](https://seoschemamarkup.com/schema-markup-vali
 
 If you prefer a visual walkthrough of schema implementation from start to finish, this video covers the process step by step: [How to Add Schema Markup to Your Website [SEO For Beginners]](https://www.youtube.com/watch?v=sG3BkcOQTq0)
 
-[](https://www.youtube.com/@WebSensePro)
-
-
 ***
 
 ## **Common Schema Mistakes That Waste SEO Opportunities**
