@@ -98,12 +98,15 @@ Content types with high purchase intent - Products, Local Businesses, and Softwa
 
 These two are frequently confused, but they serve distinct purposes.
 
-| **Aspect** | **Aggregate Rating Schema** | **Review Schema** |
-| **Purpose** | Summarizes many ratings into one score | Represents a single, individual review |
-| **Data Source** | Calculated average across all reviews | One reviewer's specific opinion and text |
-| **Use Cases** | Product pages, business listings, apps | Testimonial pages, individual review posts |
-| **SEO Benefit** | Enables star-rating Rich Results | Supports E-E-A-T signals and content depth |
-| **Typical Properties** | ratingValue, reviewCount, bestRating | author, reviewBody, datePublished |
+| Aspect | Aggregate Rating Schema | Review Schema |
+| --- | --- | --- |
+| Purpose | Summarizes many ratings into one score | Represents a single, individual review |
+| Data Source | Calculated average across all reviews | One reviewer's specific opinion and text |
+| Use Cases | Product pages, business listings, apps | Testimonial pages, individual review posts |
+| SEO Benefit | Enables star-rating Rich Results | Supports E-E-A-T signals and content depth |
+| Typical Properties | ratingValue, reviewCount, bestRating | author, reviewBody, datePublished |
+
+|  |
 
 In practice, well-built pages often include both: individual Review entries feeding into a single Aggregate Rating summary.
 
