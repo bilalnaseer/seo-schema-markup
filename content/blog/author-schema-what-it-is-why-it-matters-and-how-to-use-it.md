@@ -102,7 +102,13 @@ Google cross-references the same URLs to verify and confirm the author's identit
 
 ## **Author Schema vs. Person Schema**
 
-[![Author Schema vs. Person Schema](/assets/img/blog/Author-Schema-vs-Person-Schema.jpg "Author Schema vs. Person Schema")](Author-Schema-vs-Person-Schema)
+| Feature | Author Schema | Person Schema |
+| --- | --- | --- |
+| Primary Use | Attribute content to a creator | Describe any person (celebrity, professional, etc.) |
+| Context | Inside Article or BlogPosting schema | Can be standalone or nested |
+| Google Focus | Content credibility and EEAT | Entity recognition and Knowledge Graph |
+| Common Properties | name, url, sameAs, jobTitle | Same, plus birthDate, affiliation, etc. |
+| Required for Articles? | Recommended for news & blog content | Not always required |
 
 In practice, Author Schema _uses_ the Person schema type. The distinction matters because it helps you apply the right context-especially when nesting it inside Article or NewsArticle structured data.
 
