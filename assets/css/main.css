@@ -321,7 +321,9 @@ pre.code code { font-family: inherit; white-space: pre; }
 .prose li { margin-bottom: .4em; }
 .prose code { background: var(--code-bg); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-family: var(--mono); font-size: .86em; }
 .prose blockquote { border-left: 3px solid var(--accent); margin: 1.2em 0; padding: .2em 0 .2em 16px; color: var(--text-soft); }
+.prose .table-wrap { overflow-x: auto; margin: 1.2em 0; -webkit-overflow-scrolling: touch; }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: .92rem; }
+.prose .table-wrap table { margin: 0; min-width: 480px; }
 .prose th, .prose td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; }
 .prose th { background: var(--bg-alt); }
 

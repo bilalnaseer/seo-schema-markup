@@ -111,10 +111,25 @@ visit `seoschemamarkup.com/admin`, click **Login with GitHub**, and write posts.
 - **Approval on/off:** `publish_mode: editorial_workflow` in `admin/config.yml`
   enables the review gate. Remove that line to publish instantly (no approval).
 - **Updating Sveltia:** the editor bundle is vendored at `admin/sveltia-cms.js`
-  (pinned, no CDN). To update, re-download a pinned version:
+  (pinned, no CDN — currently **0.209.2**). To update, re-download a pinned version:
   ```
   curl -sL "https://unpkg.com/@sveltia/cms@<version>/dist/sveltia-cms.js" -o admin/sveltia-cms.js
   ```
+  Never go below 0.209: the **Focus keyword** field (`admin/seo-panel.js`) is a
+  custom field type, which older builds silently ignore — the editor then
+  reports `seo-keyword` as an unknown widget and refuses the config.
+- **Focus keyword checks:** optional per-post `focus_keyword` front matter,
+  CMS-only (the build ignores it). The editor scores the page title
+  (Title + " — SEO Schema Markup Blog", as `tools/build-blog.js` renders it)
+  and the meta description against the keyword, live, without ever blocking a
+  save. If the title suffix in `tools/build-blog.js` changes, update
+  `TITLE_SUFFIX` in `admin/seo-panel.js` to match.
+- **Tables in posts:** use **Insert → Table** in the editor toolbar
+  (`admin/table-component.js`). Rows are one per line, cells split on `|` or
+  tabs (paste straight from a spreadsheet), `\|` for a literal pipe. It saves a
+  plain GFM pipe table; `tools/build-blog.js` renders those (in a scrollable
+  `.table-wrap`) and also passes raw block-level HTML such as `<table>` through
+  untouched for posts written in raw Markdown mode.
 - **Local preview of the blog:** `node tools/build-blog.js` then open
   `blog/index.html`.
 - **Scaling:** a single `sitemap.xml` is fine into the hundreds of URLs. If the

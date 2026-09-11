@@ -2,120 +2,192 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://seoschemamarkup.com/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/schema-markup-validator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/faq-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/product-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/shopify-product-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/article-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/local-business-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/organization-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/breadcrumb-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/event-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/review-schema-generator/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/what-is-schema-markup/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/types-of-schema-markup/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/how-to-add-schema-markup/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/json-ld/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/aggregaterating-schema/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/shopify-schema-markup/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/wordpress-schema-markup/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seoschemamarkup.com/blog/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://seoschemamarkup.com/blog/welcome-to-the-blog/</loc>
+    <loc>https://seoschemamarkup.com/blog/restaurant-json-ld-schema-generator/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/how-to-add-schema-markup-to-wordpress/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/geo-vs-schema-markup/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/local-seo-schema-markup-electrical-services/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/how-to-boost-seo-using-schema/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/shopify-schema-markup-implementation-guide-json-ld/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/top-10-seo-schema-markup-tools/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/how-to-measure-impact-of-schema-on-rankings/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/product-classification-schema-e-commerce-best-guide/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/author-schema-guide/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/wsp-mcp-vs-novamira-wordpress-ai-connector-comparison/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/how-webpage-schema-can-transform-your-website-s-visibility-and-engagement/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://seoschemamarkup.com/blog/aggregaterating-schema-complete-guide-to-winning-rich-results-2026/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

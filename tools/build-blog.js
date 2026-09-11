@@ -105,6 +105,19 @@ function inline(text) {
 }
 
 /* ---------------- block Markdown ---------------- */
+// Block-level HTML tags that start a raw passthrough block (see below).
+const HTML_BLOCK = /^\s*<(table|div|figure|details|iframe|video|section|aside|ul|ol|dl|pre|hr|br)\b/i;
+
+// A pipe table starts on a `| … |` line followed by either a `| --- | --- |`
+// separator (GFM) or another `| … |` row — the CMS editor has been known to
+// drop the separator, and the first row is the header either way. A lone line
+// beginning with `|` is ordinary paragraph text. (Treating it as a block start
+// without a handler to consume it would loop forever.)
+const PIPE_ROW = /^\s*\|.*\|\s*$/;
+const PIPE_SEP = /^\s*\|[\s:|-]+\|\s*$/;
+const isTableStart = (lines, i) =>
+  PIPE_ROW.test(lines[i]) && i + 1 < lines.length && (PIPE_SEP.test(lines[i + 1]) || PIPE_ROW.test(lines[i + 1]));
+
 function markdown(md) {
   const lines = md.replace(/\r\n/g, '\n').split('\n');
   const out = [];
@@ -132,6 +145,34 @@ function markdown(md) {
 
     // horizontal rule
     if (/^(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) { out.push('<hr>'); i++; continue; }
+
+    // raw HTML block: a line opening a block-level tag is passed through
+    // untouched (with everything up to the next blank line), so an HTML
+    // <table> pasted into the CMS in raw mode renders instead of escaping.
+    if (HTML_BLOCK.test(line)) {
+      const buf = [];
+      while (i < lines.length && lines[i].trim()) { buf.push(lines[i]); i++; }
+      out.push(buf.join('\n'));
+      continue;
+    }
+
+    // pipe table:  | a | b |  /  | --- | --- |  /  rows
+    // (also what the CMS "Table" block saves — see admin/table-component.js;
+    // a literal pipe inside a cell is escaped there as \|)
+    if (isTableStart(lines, i)) {
+      const cells = (row) => row.trim().replace(/^\||\|$/g, '').split(/(?<!\\)\|/).map((c) => c.trim().replace(/\\\|/g, '|'));
+      const header = cells(lines[i]);
+      i += PIPE_SEP.test(lines[i + 1]) ? 2 : 1; // header (+ separator when present)
+      const body = [];
+      while (i < lines.length && /^\s*\|/.test(lines[i])) { body.push(cells(lines[i])); i++; }
+      // .table-wrap scrolls sideways on narrow screens instead of breaking the column.
+      out.push(
+        '<div class="table-wrap"><table>\n  <thead><tr>' + header.map((c) => `<th>${inline(c)}</th>`).join('') + '</tr></thead>\n' +
+        '  <tbody>\n' + body.map((r) => '    <tr>' + r.map((c) => `<td>${inline(c)}</td>`).join('') + '</tr>').join('\n') +
+        '\n  </tbody>\n</table></div>'
+      );
+      continue;
+    }
 
     // blockquote (consecutive > lines)
     if (/^>\s?/.test(line)) {
@@ -161,6 +202,7 @@ function markdown(md) {
     const para = [];
     while (i < lines.length && lines[i].trim() &&
            !/^(#{1,6}\s|>\s?|\s*[-*+]\s+|\s*\d+\.\s+|```)/.test(lines[i]) &&
+           !HTML_BLOCK.test(lines[i]) && !isTableStart(lines, i) &&
            !/^(-{3,}|\*{3,}|_{3,})\s*$/.test(lines[i])) {
       para.push(lines[i]); i++;
     }
@@ -389,6 +431,34 @@ function write(rel, html) {
   console.log('wrote /blog/' + (rel ? rel + '/' : ''));
 }
 
+/* ---------------- homepage "From the blog" ----------------
+   index.html is hand-written, but the cards inside its BLOG:START / BLOG:END
+   markers are ours: replace them with the latest posts on every build so the
+   homepage never goes stale when a post is published from the CMS. Same
+   postCard() markup and .blog-card CSS as /blog/. */
+const HOME_FILE = path.join(ROOT, 'index.html');
+const HOME_POSTS = 3;
+const HOME_START = '<!-- BLOG:START -->';
+const HOME_END = '<!-- BLOG:END -->';
+
+function updateHomepage(posts) {
+  if (!fs.existsSync(HOME_FILE)) return;
+  const html = fs.readFileSync(HOME_FILE, 'utf8');
+  const start = html.indexOf(HOME_START);
+  const end = html.indexOf(HOME_END);
+  if (start === -1 || end === -1 || end < start) {
+    console.warn('index.html: BLOG:START/END markers not found — homepage blog section not updated.');
+    return;
+  }
+  const cards = posts.slice(0, HOME_POSTS).map(postCard).join('\n      ');
+  const block = `${HOME_START}\n      ${cards}\n      ${HOME_END}`;
+  const next = html.slice(0, start) + block + html.slice(end + HOME_END.length);
+  if (next !== html) {
+    fs.writeFileSync(HOME_FILE, next);
+    console.log(`updated index.html (${Math.min(posts.length, HOME_POSTS)} latest post(s)).`);
+  }
+}
+
 function build() {
   const posts = loadPosts();
   // Clear /blog/ first so posts deleted or renamed in the CMS don't leave stale
@@ -397,6 +467,7 @@ function build() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   write('', indexPage(posts));
   posts.forEach((p) => write(p.slug, postPage(p)));
+  updateHomepage(posts);
   console.log(`done. ${posts.length} post(s).`);
 }
 
@@ -404,4 +475,4 @@ function build() {
 // by build-sitemap.js (which just needs loadPosts()).
 if (require.main === module) build();
 
-module.exports = { loadPosts, build };
+module.exports = { loadPosts, build, markdown };

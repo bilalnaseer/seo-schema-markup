@@ -76,12 +76,23 @@ tools/build-blog.js               Builds /blog/ (index + posts) from Markdown.
 tools/build-sitemap.js            OPTIONAL: regenerates sitemap.xml (tools +
                                   guides + blog posts).
 
+index.html                        Homepage. Hand-written EXCEPT the cards
+                                  between <!-- BLOG:START --> / <!-- BLOG:END -->
+                                  in the "From the blog" section, which
+                                  tools/build-blog.js rewrites on every build
+                                  (3 newest non-draft posts). Never hand-edit
+                                  those cards — edit content/blog/ or postCard().
 /blog/                            Blog index + posts (GENERATED from Markdown).
 content/blog/*.md                 Blog post SOURCE (front-matter + Markdown),
                                   written by the team via Sveltia CMS.
 /admin/                           Sveltia CMS (index.html + config.yml +
-                                  vendored sveltia-cms.js). noindex. See
-                                  BLOG-SETUP.md for OAuth/Worker/Cloudflare.
+                                  vendored sveltia-cms.js, >= 0.209 required).
+                                  seo-panel.js = `seo-keyword` field type
+                                  (Focus keyword + live title/description
+                                  checks); table-component.js = Insert > Table
+                                  block. index.html uses CMS_MANUAL_INIT so
+                                  both register before CMS.init() — keep that
+                                  order. noindex. See BLOG-SETUP.md.
 
 robots.txt · sitemap.xml · site.webmanifest · favicon.svg/.ico
 assets/img/og-default.(svg|png) · logo-512.png · apple-touch-icon.png

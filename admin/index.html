@@ -8,8 +8,27 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
+  <!-- Manual init so the `seo-keyword` custom field type (admin/seo-panel.js) and
+       the Table editor component (admin/table-component.js) are registered BEFORE
+       the CMS validates config.yml. Auto-init would race them, and an unrecognised
+       widget name is reported as a config error on the login screen. -->
+  <script data-cfasync="false">
+    window.CMS_MANUAL_INIT = true;
+  </script>
+
   <!-- Sveltia CMS: vendored (self-hosted) bundle, no external CDN.
-       Update it by re-downloading a pinned version into admin/sveltia-cms.js. -->
-  <script src="/admin/sveltia-cms.js"></script>
+       Update it by re-downloading a pinned version into admin/sveltia-cms.js.
+
+       data-cfasync="false" keeps Cloudflare Rocket Loader (if ever enabled) from
+       deferring these scripts — it rewrites the type attribute, which stops the CMS
+       from initializing and leaves /admin/ blank. Needed on every script here:
+       deferring the add-ons would register them after init. -->
+  <script src="/admin/sveltia-cms.js" data-cfasync="false"></script>
+  <script src="/admin/seo-panel.js" data-cfasync="false"></script>
+  <script src="/admin/table-component.js" data-cfasync="false"></script>
+
+  <script data-cfasync="false">
+    CMS.init();
+  </script>
 </body>
 </html>

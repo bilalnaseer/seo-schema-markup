@@ -8,6 +8,13 @@ backend:
   # OAuth bridge so the team logs in without touching GitHub directly.
   # Replace with your deployed sveltia-cms-auth Worker origin (see BLOG-SETUP.md):
   base_url: https://sveltiacms.bilalnaseer01.workers.dev
+  # Friendlier commit messages in the repo history.
+  commit_messages:
+    create: 'Blog: create "{{slug}}"'
+    update: 'Blog: update "{{slug}}"'
+    delete: 'Blog: delete "{{slug}}"'
+    uploadMedia: 'Blog: upload {{path}}'
+    deleteMedia: 'Blog: delete {{path}}'
 
 # Posts go through Draft -> In review -> Ready. Nothing publishes until approved
 # (you merge/approve from inside this same CMS UI — no GitHub knowledge needed).
@@ -16,14 +23,6 @@ publish_mode: editorial_workflow
 # Cover images uploaded in the editor land here and are referenced as /assets/img/blog/...
 media_folder: "assets/img/blog"
 public_folder: "/assets/img/blog"
-
-# Friendlier commit messages in the repo history.
-backend_commit_messages: &commit_messages
-  create: 'Blog: create "{{slug}}"'
-  update: 'Blog: update "{{slug}}"'
-  delete: 'Blog: delete "{{slug}}"'
-  uploadMedia: 'Blog: upload {{path}}'
-  deleteMedia: 'Blog: delete {{path}}'
 
 collections:
   - name: blog
@@ -37,9 +36,20 @@ collections:
     summary: "{{title}}  ·  {{date}}"
     sortable_fields: [date, title]
     fields:
-      - { name: title, label: "Title", widget: string }
+      - { name: title, label: "Title", widget: string, maxlength: 120, hint: "The browser/Google title is this plus ‘ — SEO Schema Markup Blog’ (25 characters) — aim for ~35 here so the whole thing stays under 60." }
       - { name: slug, label: "Permalink (URL slug)", widget: string, required: false, hint: "Optional. The blog post URL is /blog/<this>/. Paste the title here if you like — it is auto-converted to lowercase with spaces turned into hyphens (e.g. 'My New Post' becomes 'my-new-post'). Leave blank to auto-generate from the title." }
-      - { name: description, label: "Meta description (for Google & social)", widget: string, required: true, hint: "~150 characters. Shows in search results." }
+      # --- Focus keyword + live SEO checks ----------------------------------
+      # `seo-keyword` is a custom field type registered by admin/seo-panel.js. It
+      # renders a plain text input plus a live checklist scoring the page title
+      # (Title + " — SEO Schema Markup Blog", as the build renders it) and the
+      # meta description against this keyword. Advisory only — never blocks a
+      # save. CMS-only: tools/build-blog.js ignores `focus_keyword`.
+      - { name: focus_keyword, label: "Focus keyword", widget: seo-keyword, required: false, hint: "The one search phrase this post should rank for. The checks below update live as you edit the Title and Meta description." }
+      # maxlength switches Sveltia's character counter on. It is also a hard rule,
+      # so the ceilings sit well above every existing post (longest title 66,
+      # longest description 154) — the 50–60 / 120–160 guideline lives in the
+      # focus-keyword checks, where it advises without blocking.
+      - { name: description, label: "Meta description (for Google & social)", widget: string, required: true, maxlength: 200, hint: "Aim for 120–160 characters. Shows in search results." }
       - { name: date, label: "Publish date", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
       - { name: updated, label: "Last updated (optional)", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true, required: false }
       - { name: author, label: "Author name", widget: string, default: "seoschemamarkup-admin" }
@@ -55,4 +65,4 @@ collections:
       - { name: best_rating, label: "Best possible rating", widget: number, required: false, value_type: int, default: 5 }
       # ----------------------------------------------------------------------
       - { name: draft, label: "Draft (hide from site)", widget: boolean, default: false }
-      - { name: body, label: "Post content", widget: markdown }
+      - { name: body, label: "Post content", widget: markdown, hint: "Tip: use Insert → Table in the toolbar to add a table (paste rows straight from a spreadsheet)." }

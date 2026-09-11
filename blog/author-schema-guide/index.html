@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Author Schema: What It Is, Why It Matters, and How to Use It — SEO Schema Markup Blog</title>
+<meta name="description" content="Learn what Author Schema is, why it matters for SEO, and how to implement JSON-LD author structured data to strengthen your EEAT signals in Google Search.">
+<link rel="canonical" href="https://seoschemamarkup.com/blog/author-schema-guide/">
+<meta name="theme-color" content="#5b6cff">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SEO Schema Markup">
+<meta property="og:title" content="Author Schema: What It Is, Why It Matters, and How to Use It — SEO Schema Markup Blog">
+<meta property="og:description" content="Learn what Author Schema is, why it matters for SEO, and how to implement JSON-LD author structured data to strengthen your EEAT signals in Google Search.">
+<meta property="og:url" content="https://seoschemamarkup.com/blog/author-schema-guide/">
+<meta property="og:image" content="https://seoschemamarkup.com/assets/img/blog/author-schema.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Author Schema: What It Is, Why It Matters, and How to Use It — SEO Schema Markup Blog">
+<meta name="twitter:description" content="Learn what Author Schema is, why it matters for SEO, and how to implement JSON-LD author structured data to strengthen your EEAT signals in Google Search.">
+<meta name="twitter:image" content="https://seoschemamarkup.com/assets/img/blog/author-schema.jpeg">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preload" href="/assets/css/main.css" as="style">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seoschemamarkup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seoschemamarkup.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Author Schema: What It Is, Why It Matters, and How to Use It", "item": "https://seoschemamarkup.com/blog/author-schema-guide/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWorkSeries",
+  "name": "Author Schema: What It Is, Why It Matters, and How to Use It",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "789",
+    "bestRating": "5"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a class="brand" href="/"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b6cff"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> SEO Schema Markup</a>
+    <div class="nav-spacer"></div>
+    <div class="nav-links" id="navLinks">
+      <a href="/schema-markup-validator/">Validator</a>
+      <div class="dropdown">
+        <button aria-haspopup="true" aria-expanded="false">Generators ▾</button>
+        <div class="dropdown-menu">
+          <a href="/faq-schema-generator/">FAQ Schema</a>
+          <a href="/product-schema-generator/">Product Schema</a>
+          <a href="/shopify-product-schema-generator/">Shopify Product Schema</a>
+          <a href="/article-schema-generator/">Article Schema</a>
+          <a href="/local-business-schema-generator/">Local Business Schema</a>
+          <a href="/organization-schema-generator/">Organization Schema</a>
+          <a href="/breadcrumb-schema-generator/">Breadcrumb Schema</a>
+          <a href="/event-schema-generator/">Event Schema</a>
+          <a href="/review-schema-generator/">Review Schema</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button aria-haspopup="true" aria-expanded="false">Guides ▾</button>
+        <div class="dropdown-menu">
+          <a href="/what-is-schema-markup/">What is Schema Markup</a>
+          <a href="/types-of-schema-markup/">Types of Schema Markup</a>
+          <a href="/how-to-add-schema-markup/">How to Add Schema Markup</a>
+          <a href="/json-ld/">What is JSON-LD</a>
+          <a href="/aggregaterating-schema/">AggregateRating Schema</a>
+          <a href="/shopify-schema-markup/">Shopify Schema Markup</a>
+          <a href="/wordpress-schema-markup/">WordPress Schema Markup</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="navLinks">☰</button>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Author Schema: What It Is, Why It Matters, and How to Use It</nav>
+    <article class="prose blog-post">
+      <h1>Author Schema: What It Is, Why It Matters, and How to Use It</h1>
+      <p class="post-meta muted"><time datetime="2026-08-06T00:00:00.000Z">August 6, 2026</time> · <span>by <a href="https://seoschemamarkup.com">seoschemamarkup-admin</a></span> · <span>Updated August 6, 2026</span></p>
+      <p class="post-rating" aria-label="Rated 5 out of 5"><span class="post-rating-star" aria-hidden="true">★</span> <strong>5</strong> <span class="muted">/ 5 · 789 ratings</span></p>
+      <img class="post-cover" src="/assets/img/blog/author-schema.jpeg" alt="Author Schema: What It Is, Why It Matters, and How to Use It" loading="eager">
+      <p>Every piece of content published online has an author, but Google can't always figure out who that author is or whether they're trustworthy. That's where Author Schema comes in. If you're serious about SEO in 2026, understanding author structured data isn't optional. It's one of the clearest ways to tell search engines exactly who created your content—and why they're credible.</p>
+<h2><strong>What Is Author Schema?</strong></h2>
+<p><strong>Author Schema is a type of structured data markup based on Schema.org that tells search engines the identity, credentials, and context of a content author.</strong> It uses a standardized vocabulary to describe a person or organization in a machine-readable format, allowing Google to connect your author to an entity in its Knowledge Graph. Implementing it correctly helps Google understand not just what your content says, but <em>who</em> is saying it.</p>
+<h3><strong>Understanding Schema.org Person</strong></h3>
+<p>Schema.org is a collaborative vocabulary supported by Google, Bing, Yahoo, and Yandex. The <strong>Schema.org Person</strong> type is the foundation of the Author Schema. It defines a set of properties, such as name, URL, job title, and social profiles, that describe an individual in a way that search engines can parse and act on.</p>
+<p>Structured data is code (usually written in JSON-LD format) embedded in a webpage that organizes information into a format machines understand. Instead of hoping Google <em>infers</em> your author's identity from plain text, structured data gives it the answer directly.</p>
+<p>Google uses this data to build entity profiles, power rich results, and evaluate content trustworthiness as part of its broader quality assessment systems.</p>
+<h2><strong>Why Author Schema Matters for SEO</strong></h2>
+<p>Author Schema isn't just a technical formality. It has real, measurable implications for how your content is indexed, ranked, and displayed.</p>
+<p><strong>Key benefits include:</strong></p>
+<ul>
+  <li><strong>Better content understanding</strong> - Google can accurately attribute content to the right person, reducing ambiguity around authorship.</li>
+  <li><strong>Knowledge Graph integration</strong> - A well-structured author entity can be picked up by Google's Knowledge Graph, giving your author a recognized digital identity.</li>
+  <li><strong>Stronger EEAT signals</strong> - Google's quality guidelines emphasize Experience, Expertise, Authoritativeness, and Trustworthiness. Author Schema is one of the most direct ways to surface those signals in your markup.</li>
+  <li><strong>Eligibility for rich search features</strong> - Certain article types (like news articles) can display author information in rich results when schema is present.</li>
+  <li><strong>Better performance in AI-powered search</strong>—systems like Google's AI Overviews and generative search experiences rely heavily on structured, entity-based data to attribute and surface information accurately.</li>
+  <li><strong>Stronger author identity across the web</strong> - By linking to social profiles and official pages, Author Schema creates a consistent, verifiable identity that builds trust with both search engines and readers.</li>
+</ul>
+<h2><strong>How Author Schema Works</strong></h2>
+<h3><strong>Key Properties of Author Schema</strong></h3>
+<p>Author Schema is typically written in JSON-LD (JavaScript Object Notation for Linked Data)-the format Google recommends for all structured data implementations. It's placed in the &lt;head&gt; of your HTML and uses the @type: "Person" declaration from Schema.org.</p>
+<p>Here's what a complete JSON-LD Author Schema looks like in practice:</p>
+<p>{</p>
+<p>"@context": "https://schema.org",</p>
+<p>"@type": "Person",</p>
+<p>"name": "Jane Doe",</p>
+<p>"url": "https://example.com/about/jane-doe",</p>
+<p>"image": "https://example.com/images/jane-doe.jpg",</p>
+<p>"jobTitle": "Senior Health Writer",</p>
+<p>"worksFor": {</p>
+<p>"@type": "Organization",</p>
+<p>"name": "Example Media"</p>
+<p>},</p>
+<p>"sameAs": [</p>
+<p>"https://twitter.com/janedoe",</p>
+<p>"https://linkedin.com/in/janedoe",</p>
+<p>"https://en.wikipedia.org/wiki/Jane_Doe"</p>
+<p>],</p>
+<p>"description": "Jane Doe is a certified health writer with over 10 years of experience covering nutrition and wellness."</p>
+<p>}</p>
+<p><strong>What each property does:</strong></p>
+<ul>
+  <li><strong>Name</strong> - The author's full name (required)</li>
+  <li><strong>URL</strong> - A canonical author profile page on your site</li>
+  <li><strong>Image</strong> - A headshot or professional photo</li>
+  <li><strong>Job Title</strong> - Their professional role</li>
+  <li><strong>Works For</strong> - The organization or publisher they write for</li>
+  <li><strong>SameAs</strong> - Links to verified social and authority profiles (LinkedIn, Twitter, Wikipedia, etc.)</li>
+  <li><strong>Description</strong> - A brief bio summarizing expertise and credentials</li>
+</ul>
+<h3><strong>How Google Connects Author Entities</strong></h3>
+<p>Google cross-references the same URLs to verify and confirm the author's identity across the web. The more authoritative and consistent those profiles are, the stronger the entity association becomes. This is how a byline goes from being a string of text to a recognized, trusted entity in Google's semantic index.</p>
+<h2><strong>Author Schema vs. Person Schema</strong></h2>
+<p><a href="Author-Schema-vs-Person-Schema"><img src="/assets/img/blog/Author-Schema-vs-Person-Schema.jpg" alt="Author Schema vs. Person Schema" title="Author Schema vs. Person Schema" loading="lazy"></a></p>
+<p>In practice, Author Schema <em>uses</em> the Person schema type. The distinction matters because it helps you apply the right context-especially when nesting it inside Article or NewsArticle structured data.</p>
+<h2><strong>Who Should Use Author Schema?</strong></h2>
+<p>Author Schema isn't only for major publishers. Anyone producing content online can benefit:</p>
+<ul>
+  <li><strong>Bloggers</strong> - Establish a personal brand and build topical authority over time.</li>
+  <li><strong>Publishers and media outlets</strong> - Signal editorial credibility and attract rich results in Google News.</li>
+  <li><strong>News websites</strong> - Virtually required for Google News eligibility and Top Stories features.</li>
+  <li><strong>SaaS companies</strong> - Content teams can strengthen thought leadership and brand authority.</li>
+  <li><strong>Digital agencies</strong> - Demonstrate writer expertise to clients and search engines alike.</li>
+  <li><strong>Healthcare websites</strong> - especially critical for YMYL (Your Money or Your Life) content; author credentials directly affect how Google evaluates trustworthiness.</li>
+  <li><strong>Finance and legal sites</strong> - Same YMYL considerations apply; author markup validates professional credentials.</li>
+  <li><strong>Educational websites</strong> - Help associate instructors and subject experts with course and article content.</li>
+  <li><strong>Local businesses with blogs</strong> - Even a local company blog benefits from associating content with a named, credentialed author.</li>
+</ul>
+<p>WordPress users publishing content at scale should also note that managing schema across a large site is far easier when your workflow is streamlined. Tools like the<a href="https://freewordpressmcp.com/" rel="noopener" target="_blank"> WordPress MCP Server</a> at FreeWordPressMCP.com can help integrate AI-assisted publishing and content management workflows directly with your WordPress site, reducing the manual overhead of implementing structured data across hundreds of posts.</p>
+<h2><strong>Common Mistakes to Avoid</strong></h2>
+<p>A poorly implemented Author Schema can be worse than none at all if it causes validation errors or sends conflicting signals to Google.</p>
+<p><strong>Avoid these common pitfalls:</strong></p>
+<ul>
+  <li><strong>Missing Person schema entirely</strong> - Many sites add Article schema without nesting a proper @type: "Person" block for the author.</li>
+  <li><strong>Incorrect or broken URLs</strong> - The url and sameAs fields must point to live, accessible pages. Broken links invalidate the entity connection.</li>
+  <li><strong>Duplicate schema blocks</strong> - Adding multiple conflicting Author Schema entries on the same page confuses crawlers.</li>
+  <li><strong>Missing social profiles</strong> - Omitting the sameAs links weakens entity recognition and leaves Google without verification anchors.</li>
+  <li><strong>Invalid JSON syntax</strong> - A misplaced comma or missing bracket will cause the entire schema block to fail silently.</li>
+  <li><strong>Using outdated Schema.org properties</strong> - Schema.org evolves. Properties that were valid two years ago may now be deprecated or renamed. Always reference the current Schema.org Person documentation.</li>
+  <li><strong>Inconsistent author information</strong> - If your markup says "Jane Doe" but your byline says "J. Doe" and your LinkedIn says "Jane M. Google relies on consistent author information, so using different name formats across your site can weaken author recognition.</li>
+</ul>
+<p>If your site has accumulated schema errors over time or you're unsure whether your structured data implementation is sound, it's worth getting a structured data audit from a qualified team. Agencies specializing in technical SEO services, like <a href="https://websensepro.com/" rel="noopener" target="_blank">WebSensePro</a>, can identify implementation gaps, fix invalid markup, and ensure your schema strategy aligns with current Google guidelines—particularly important for YMYL sites, where errors carry real ranking risk.</p>
+<h3><strong>How to Generate Author Schema Easily</strong></h3>
+<p>Writing valid JSON-LD from scratch takes practice, and a single syntax error can silently break your entire schema block. Rather than building author markup by hand, you can use the <strong>Author Schema Generator</strong> on SEOSchemaMarkup.com to generate valid, ready-to-use JSON-LD in seconds—no coding required.</p>
+<p>The tool walks you through each property: name, job title, profile URL, headshot, bio, and same-as social links. Once you fill in the fields, it outputs clean, properly formatted markup you can copy directly into your site's &lt;head&gt; or your CMS's schema field.</p>
+<p><strong>If you're unsure where to place the generated code, watch this step-by-step tutorial on YouTube:</strong> <a href="https://www.youtube.com/watch?v=sG3BkcOQTq0" rel="noopener" target="<em>blank"><strong></em>How to Add Schema Markup_</strong></a></p>
+<p>Once you have the output, validate it using the Google Rich Results Test to confirm everything is parsing correctly before you publish.</p>
+<p>If you manage a multi-author publication, this approach also brings consistency—every author's structured data follows the same format, reducing the risk of conflicting or incomplete markup across your site.</p>
+<h2><strong>How to Implement Author Schema: Step-by-Step</strong></h2>
+<ol>
+  <li><strong>Create a dedicated author page</strong> on your website (e.g., /about/jane-doe/).</li>
+  <li><strong>Gather author details</strong>: full name, job title, bio, headshot URL, employer, and social profile URLs.</li>
+  <li><strong>Generate your JSON-LD markup</strong> using the Author Schema Generator.</li>
+  <li><strong>Paste the markup</strong> into the &lt;head&gt; section of each article page, or use a CMS plugin to add it automatically.</li>
+  <li><strong>Nest it inside your Article schema</strong> using the "author" property to connect the two blocks.</li>
+  <li><strong>Validate using the Google Rich Results Test</strong> to check for errors or warnings.</li>
+  <li><strong>Monitor in Google Search Console</strong> under the Enhancements tab to track how your schema is being processed.</li>
+</ol>
+<h2><strong>Best Practices for Author Schema</strong></h2>
+<p>Use these best practices to ensure your author structured data is accurate, consistent, and effective.</p>
+<ul>
+  <li><strong>Keep author information consistent</strong> across your website, social profiles, and any external publications.</li>
+  <li><strong>Use official, canonical profile URLs</strong> for both your site and third-party platforms.</li>
+  <li><strong>Validate every schema implementation</strong> before publishing, using Google's Rich Results Test or Schema.org's validator.</li>
+  <li><strong>Keep information up to date</strong> - if an author changes job titles or social handles, update the schema accordingly.</li>
+  <li><strong>Build high-quality author pages</strong> with a full bio, credentials, headshot, and links to published work.</li>
+  <li><strong>Links to authoritative social profiles</strong> - LinkedIn, Twitter/X, and Wikipedia (if applicable) - carry the most weight in Google's entity graph.</li>
+  <li><strong>Nest the Author Schema inside the Article Schema</strong> whenever possible for maximum contextual benefit.</li>
+  <li><strong>Avoid using organizational accounts</strong> as author entities when a named person wrote the content—Google prefers Person-level attribution for editorial content.</li>
+</ul>
+<h2><strong>Frequently Asked Questions</strong></h2>
+<p><strong>What is Author Schema?</strong></p>
+<p>Author Schema is structured data markup using the Schema.org Person type to identify and describe the author of a web page or article. It tells search engines the author's name, credentials, and online presence in a machine-readable format.</p>
+<p><strong>Does Author Schema improve rankings?</strong></p>
+<p>Author Schema is not a direct ranking factor, but it strengthens EEAT signals that influence how Google evaluates content quality. It also makes content eligible for certain rich results and improves how Google attributes and understands your content-both of which can positively affect visibility over time.</p>
+<p><strong>How do I test Author Schema?</strong></p>
+<p>Use the <strong>Google Rich Results Test</strong> (search.google.com/test/rich-results) or the <strong>Schema Markup Validator</strong> (validator.schema.org) to paste your markup and check for errors, warnings, and valid detected entities.</p>
+<p><strong>Is Author Schema required?</strong></p>
+<p>It's not technically required, but it's strongly recommended—especially for news articles, health content, finance content, and any YMYL pages where author credentials directly affect how Google assesses trustworthiness.</p>
+<p><strong>Can I use JSON-LD for Author Schema?</strong></p>
+<p>Yes, and Google specifically recommends JSON-LD as the preferred format for structured data, including Author Schema. It's easier to implement and maintain than Microdata or RDFa because it lives in a single script block and doesn't require changes to your HTML markup.</p>
+<h3><strong>Conclusion</strong></h3>
+<p>Author Schema is one of the most underused tools in modern SEO and one of the most impactful for sites where credibility matters. By implementing structured data that clearly identifies your authors, you give Google the entity-level signals it needs to understand and trust your content.</p>
+<p>The good news is you don't need to write JSON-LD by hand.<a href="https://seoschemamarkup.com/article-schema-generator/"> Generate Author Schema</a> using a dedicated tool, validate your output with Google's Rich Results Test, keep your author profiles current, and you'll have a solid foundation for communicating expertise and trustworthiness at scale. Get it right once, and it works quietly in the background every time your content appears in Google Search.</p>
+    </article>
+    <div class="ad-slot" data-format="inline" aria-hidden="true"><!-- Reserved ad slot -->Ad space</div>
+    <section class="band">
+      <h2 class="center">Generate your schema markup</h2>
+      <div class="grid">
+        <a class="card" href="/schema-markup-validator/"><h3>Schema Validator</h3><p>Test any JSON-LD.</p></a>
+        <a class="card" href="/faq-schema-generator/"><h3>FAQ Schema</h3><p>FAQ rich results.</p></a>
+        <a class="card" href="/product-schema-generator/"><h3>Product Schema</h3><p>Price &amp; ratings.</p></a>
+        <a class="card" href="/article-schema-generator/"><h3>Article Schema</h3><p>Author &amp; dates.</p></a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/" style="margin-bottom:12px"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b6cff"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> SEO Schema Markup</a>
+        <p class="footer-about">Free, open-source JSON-LD schema generators and a validator. Built by <a href="https://websensepro.com">Bilal Naseer</a>, Shopify Partner &amp; official n8n Creator at <a href="https://websensepro.com">WebSensePro</a>.</p>
+      </div>
+      <div>
+        <h4>Generators</h4>
+        <ul>
+          <li><a href="/faq-schema-generator/">FAQ Schema</a></li>
+          <li><a href="/product-schema-generator/">Product Schema</a></li>
+          <li><a href="/shopify-product-schema-generator/">Shopify Product Schema</a></li>
+          <li><a href="/article-schema-generator/">Article Schema</a></li>
+          <li><a href="/local-business-schema-generator/">Local Business Schema</a></li>
+          <li><a href="/organization-schema-generator/">Organization Schema</a></li>
+          <li><a href="/breadcrumb-schema-generator/">Breadcrumb Schema</a></li>
+          <li><a href="/event-schema-generator/">Event Schema</a></li>
+          <li><a href="/review-schema-generator/">Review Schema</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="/what-is-schema-markup/">What is Schema Markup</a></li>
+          <li><a href="/types-of-schema-markup/">Types of Schema Markup</a></li>
+          <li><a href="/how-to-add-schema-markup/">How to Add Schema Markup</a></li>
+          <li><a href="/json-ld/">What is JSON-LD</a></li>
+          <li><a href="/aggregaterating-schema/">AggregateRating Schema</a></li>
+          <li><a href="/shopify-schema-markup/">Shopify Schema Markup</a></li>
+          <li><a href="/wordpress-schema-markup/">WordPress Schema Markup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/schema-markup-validator/">Schema Validator</a></li>
+          <li><a href="https://websensepro.com">WebSensePro Agency</a></li>
+          <li><a href="https://m.youtube.com/websensepro">YouTube Channel</a></li>
+          <li><a href="https://github.com/bilalnaseer/seo-schema-markup">GitHub Repo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SEO Schema Markup · MIT License</span>
+      <span>Made with care by <a href="https://websensepro.com">WebSensePro</a></span>
+    </div>
+  </div>
+</footer>
+
+<script type="module">import { boot } from '/assets/js/shared.js'; boot();</script>
+</body>
+</html>
