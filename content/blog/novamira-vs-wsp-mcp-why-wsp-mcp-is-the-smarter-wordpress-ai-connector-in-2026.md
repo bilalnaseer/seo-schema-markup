@@ -61,7 +61,18 @@ None of this makes Novamira a bad tool for its narrow use case. But for the vast
 
 ## **Feature-by-Feature Comparison**
 
-[![Novamira vs WSP MCP](/assets/img/blog/WSP-MCP-vs-Novamira-Which-WordPress-AI-Connector-Wins.jpeg "Novamira vs WSP MCP")](WSP-MCP-vs-Novamira-Which-WordPress-AI-Connector-Wins)
+| Feature | WSP MCP | Novamira |
+| --- | --- | --- |
+| Price | 100% free, forever | Free core only; full features from ~€49–€129/year |
+| License | Fully open source (MIT) | Free tier only; Pro is closed and paid |
+| Access model | Curated, permission-scoped abilities | Full PHP, database, and file-level access |
+| Safe for live/production sites | Yes, by design | Vendor recommends dev/staging only |
+| Setup difficulty | Very low - install and connect | Low to moderate; more setup for Pro features |
+| Coding knowledge required | None | Helpful, often necessary for Pro |
+| WordPress-native coverage | Posts, pages, media, WooCommerce, Yoast, ACF, Elementor | Site-wide code access; builder tools gated behind Pro |
+| Support | Free video tutorials + active GitHub | Docs, community group, paid support tiers |
+| Long-term cost | None, ever | Recurring or lifetime licensing fee |
+| Best suited for | Everyday WordPress users, agencies, businesses | Developers comfortable with dev/staging risk |
 
 ## **Pros and Cons**
 
