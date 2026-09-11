@@ -7,7 +7,7 @@
    ========================================================================== */
 
 const SITE = 'https://seoschemamarkup.com';
-const OG = SITE + '/assets/img/og-default.png';
+const OG = SITE + '/assets/img/og-default.jpg';
 
 const LOGO = '<svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b6cff"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>';
 
@@ -125,7 +125,10 @@ function head(p, extraJsonLd) {
 <meta property="og:title" content="${p.title}">
 <meta property="og:description" content="${p.desc}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${p.ogImage || OG}">
+<meta property="og:image" content="${p.ogImage || OG}">${p.ogImage ? '' : `
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SEO Schema Markup — free JSON-LD schema generator and validator">`}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${p.title}">
 <meta name="twitter:description" content="${p.desc}">

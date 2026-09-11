@@ -95,7 +95,7 @@ content/blog/*.md                 Blog post SOURCE (front-matter + Markdown),
                                   order. noindex. See BLOG-SETUP.md.
 
 robots.txt · sitemap.xml · site.webmanifest · favicon.svg/.ico
-assets/img/og-default.(svg|png) · logo-512.png · apple-touch-icon.png
+assets/img/og-default.jpg (1200×630 site-wide OG card) · logo-512.png · apple-touch-icon.png
 ```
 
 ### Shared chrome (nav/footer/head)
@@ -142,7 +142,7 @@ On Cloudflare Pages these run as the deploy **build command** (see BLOG-SETUP.md
 - Unique `<title>` (~55–60 chars, primary keyword front-loaded) + meta description (~150 chars, primary + a secondary keyword + "free").
 - One `<h1>` with the primary keyword; logical H2/H3 with secondary keywords.
 - Self-referencing `<link rel="canonical">`. Clean trailing-slash URLs.
-- Open Graph + Twitter Card tags (title, description, og:image = `/assets/img/og-default.png`).
+- Open Graph + Twitter Card tags (title, description, og:image = `/assets/img/og-default.jpg`, 1200×630, plus `og:image:width/height/alt` when the default is used; blog posts with a cover image override it via `ogImage`).
 - Semantic HTML5, descriptive alt text, ARIA where needed.
 - Every tool page injects `BreadcrumbList` + `SoftwareApplication` JSON-LD. Generators may also dogfood their own type where genuine (e.g. FAQ page has a real `FAQPage`).
 - **Extra JSON-LD per page:** both generator and guide configs support an optional `extraJsonLd` string (raw `<script type="application/ld+json">…</script>`) that is appended into `<head>`. Use it to add genuine page-specific structured data — e.g. `/how-to-add-schema-markup/` carries a real `VideoObject` for its embedded YouTube walkthrough. Never fabricate values (dates, durations, thumbnails must be real).
