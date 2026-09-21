@@ -134,19 +134,19 @@ Look for errors (which break parsing) and warnings (which indicate suboptimal im
 ## **Frequently Asked Questions**
 
 **What is service schema?**
- Service schema is structured data based on the schema.org Service type. It's added to a webpage — typically via JSON-LD — to help search engines understand that the page describes a specific service, who offers it, where it's available, and related details. It's especially useful for businesses with multiple dedicated service pages.
+Service schema is structured data based on the schema.org Service type. It's added to a webpage — typically via JSON-LD — to help search engines understand that the page describes a specific service, who offers it, where it's available, and related details. It's especially useful for businesses with multiple dedicated service pages.
 
 **Does service schema improve Google rankings?**
- Not directly. Service schema helps search engines better interpret your page's content and entity relationships, but it isn't a ranking signal in the traditional sense. That said, clearer page understanding can indirectly support how your content performs in both traditional search and AI-powered search experiences.
+Not directly. Service schema helps search engines better interpret your page's content and entity relationships, but it isn't a ranking signal in the traditional sense. That said, clearer page understanding can indirectly support how your content performs in both traditional search and AI-powered search experiences.
 
 **What's the difference between Service Schema and LocalBusiness Schema?**
- LocalBusiness schema describes your business as a whole: name, address, phone, and hours. Service schema describes a specific service your business offers. The two work together: use LocalBusiness on your main business page and Service schema on individual service pages, with the provider property linking them.
+LocalBusiness schema describes your business as a whole: name, address, phone, and hours. Service schema describes a specific service your business offers. The two work together: use LocalBusiness on your main business page and Service schema on individual service pages, with the provider property linking them.
 
 **Can I add service schema with JSON-LD?**
- Yes — and it's the recommended approach. JSON-LD is a script-based format that doesn't require you to modify your existing HTML. You add a <script type="application/ld+json"> block containing structured data that search engines read during crawling without affecting how the page looks to visitors.
+Yes — and it's the recommended approach. JSON-LD is a script-based format that doesn't require you to modify your existing HTML. You add a <script type="application/ld+json"> block containing structured data that search engines read during crawling without affecting how the page looks to visitors.
 
 **How do I check if my service schema is valid?**
- Use Google's Rich Results Test, the Schema.org validator, or a dedicated tool like the[ ](https://seoschemamarkup.com/schema-markup-validator/)Schema Markup Validator to test your implementation. Paste your page URL or the raw JSON-LD code to check for syntax errors, missing required properties, and other issues.
+Use Google's Rich Results Test, the Schema.org validator, or a dedicated tool like the[ ](https://seoschemamarkup.com/schema-markup-validator/)Schema Markup Validator to test your implementation. Paste your page URL or the raw JSON-LD code to check for syntax errors, missing required properties, and other issues.
 
 ***
 
