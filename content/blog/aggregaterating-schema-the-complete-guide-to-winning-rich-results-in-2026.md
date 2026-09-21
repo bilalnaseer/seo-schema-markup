@@ -12,7 +12,6 @@ tags:
 rating_value: 5
 rating_count: 119
 best_rating: 5
-draft: false
 ---
 
 If you've ever wondered why some search results show a row of gold stars while others sit as plain blue links, the answer usually comes down to one small but powerful piece of structured data: **Aggregate Rating Schema**. It's one of the highest-leverage additions you can make to a page, yet it's also one of the most misunderstood - and misused - types of schema markup on the web.

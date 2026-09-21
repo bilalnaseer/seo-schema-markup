@@ -131,7 +131,22 @@
 <hr>
 <h2><strong>Turning Product Classification Into Structured Data</strong></h2>
 <p>Once a product's attributes are clearly defined, mapping them to Schema.org Product properties is a logical process:</p>
-<p><a href="Turning-Product-Classification-Into-Structured-Data"><img src="/assets/img/blog/Turning-Product-Classification-Into-Structured-Data.jpg" alt="Product Classification Schema" title="Product Classification Schema" loading="lazy"></a></p>
+<div class="table-wrap"><table>
+  <thead><tr><th>E-Commerce Attribute</th><th>Schema.org Property</th></tr></thead>
+  <tbody>
+    <tr><td>Product title</td><td>name</td></tr>
+    <tr><td>Product images</td><td>image</td></tr>
+    <tr><td>Product description</td><td>description</td></tr>
+    <tr><td>SKU</td><td>sku</td></tr>
+    <tr><td>Manufacturer part number</td><td>mpn</td></tr>
+    <tr><td>Global Trade Item Number</td><td>gtin / gtin13 / gtin12</td></tr>
+    <tr><td>Brand</td><td>brand → Organization or Brand</td></tr>
+    <tr><td>Selling information</td><td>offers → Offer</td></tr>
+    <tr><td>Price</td><td>price + priceCurrency</td></tr>
+    <tr><td>Stock status</td><td>availability</td></tr>
+    <tr><td>Reviews</td><td>aggregateRating</td></tr>
+  </tbody>
+</table></div>
 <p>designed to reflect real product data — not approximate it. Each property should correspond to information that's actually present and visible on the product page. Marking up a price that doesn't appear on the page, or a rating that isn't displayed to shoppers, creates a disconnect between the structured data and the page content.</p>
 <hr>
 <h2><strong>Product Variants Create a Classification Challenge</strong></h2>

@@ -12,7 +12,6 @@ tags:
 rating_value: 5
 rating_count: 234
 best_rating: 5
-draft: false
 ---
 
 ## What is Webpage Schema?

@@ -12,7 +12,6 @@ tags:
 rating_value: 5
 rating_count: 562
 best_rating: 5
-draft: false
 ---
 
 Most Product Schema errors don't start in the code. They start earlier—when product information is poorly organized, inconsistently labeled, or not fully understood— before structured data is generated. Getting Product Schema right in e-commerce depends on one thing that often gets skipped: correctly classifying what each product actually is before any markup is written.

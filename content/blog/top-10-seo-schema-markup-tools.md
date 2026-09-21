@@ -12,7 +12,6 @@ tags:
 rating_value: 5
 rating_count: 987
 best_rating: 5
-draft: false
 ---
 
 Schema Markup is a form of structured data added to a webpage's HTML to help search engines better understand your content. When implemented correctly, it can make your pages eligible for rich results — those enhanced listings in Google Search that display star ratings, FAQs, event details, and more.

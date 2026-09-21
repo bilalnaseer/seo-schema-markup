@@ -157,7 +157,16 @@
 <h3><strong>How Google Connects Author Entities</strong></h3>
 <p>Google cross-references the same URLs to verify and confirm the author's identity across the web. The more authoritative and consistent those profiles are, the stronger the entity association becomes. This is how a byline goes from being a string of text to a recognized, trusted entity in Google's semantic index.</p>
 <h2><strong>Author Schema vs. Person Schema</strong></h2>
-<p><a href="Author-Schema-vs-Person-Schema"><img src="/assets/img/blog/Author-Schema-vs-Person-Schema.jpg" alt="Author Schema vs. Person Schema" title="Author Schema vs. Person Schema" loading="lazy"></a></p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Feature</th><th>Author Schema</th><th>Person Schema</th></tr></thead>
+  <tbody>
+    <tr><td>Primary Use</td><td>Attribute content to a creator</td><td>Describe any person (celebrity, professional, etc.)</td></tr>
+    <tr><td>Context</td><td>Inside Article or BlogPosting schema</td><td>Can be standalone or nested</td></tr>
+    <tr><td>Google Focus</td><td>Content credibility and EEAT</td><td>Entity recognition and Knowledge Graph</td></tr>
+    <tr><td>Common Properties</td><td>name, url, sameAs, jobTitle</td><td>Same, plus birthDate, affiliation, etc.</td></tr>
+    <tr><td>Required for Articles?</td><td>Recommended for news &amp; blog content</td><td>Not always required</td></tr>
+  </tbody>
+</table></div>
 <p>In practice, Author Schema <em>uses</em> the Person schema type. The distinction matters because it helps you apply the right context-especially when nesting it inside Article or NewsArticle structured data.</p>
 <h2><strong>Who Should Use Author Schema?</strong></h2>
 <p>Author Schema isn't only for major publishers. Anyone producing content online can benefit:</p>

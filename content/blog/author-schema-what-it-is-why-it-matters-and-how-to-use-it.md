@@ -12,7 +12,6 @@ tags:
 rating_value: 5
 rating_count: 789
 best_rating: 5
-draft: false
 ---
 
 Every piece of content published online has an author, but Google can't always figure out who that author is or whether they're trustworthy. That's where Author Schema comes in. If you're serious about SEO in 2026, understanding author structured data isn't optional. It's one of the clearest ways to tell search engines exactly who created your content—and why they're credible.

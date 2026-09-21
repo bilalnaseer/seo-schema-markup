@@ -64,5 +64,4 @@ collections:
       - { name: rating_count, label: "Number of ratings (optional)", widget: number, required: false, value_type: int, min: 0, hint: "Total genuine ratings. Blank or 0 omits the rating schema." }
       - { name: best_rating, label: "Best possible rating", widget: number, required: false, value_type: int, default: 5 }
       # ----------------------------------------------------------------------
-      - { name: draft, label: "Draft (hide from site)", widget: boolean, default: false }
       - { name: body, label: "Post content", widget: markdown, hint: "Tip: use Insert → Table in the toolbar to add a table (paste rows straight from a spreadsheet)." }

@@ -12,7 +12,6 @@ tags:
 rating_value: 4.9
 rating_count: 289
 best_rating: 5
-draft: false
 ---
 
 Schema markup is one of the most talked-about topics in technical SEO - and one of the most misunderstood. Many site owners implement structured data expecting an instant ranking boost, then feel confused when their position doesn't change overnight. Understanding **how to measure the impact of schema on rankings** requires a clear methodology, the right tools, and realistic expectations about what structured data actually does.

@@ -244,7 +244,6 @@ function loadPosts() {
         authorUrl: data.author_url || data.authorUrl || DEFAULT_AUTHOR.url,
         image: data.image || '',
         tags: Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []),
-        draft: String(data.draft) === 'true',
         rating: {
           value: data.rating_value != null ? String(data.rating_value).trim() : '',
           count: data.rating_count != null ? String(data.rating_count).trim() : '',
@@ -253,7 +252,6 @@ function loadPosts() {
         bodyHtml: markdown(body),
       };
     })
-    .filter((p) => !p.draft)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 

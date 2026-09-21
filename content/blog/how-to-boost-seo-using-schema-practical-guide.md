@@ -12,7 +12,6 @@ tags:
 rating_value: 4.8
 rating_count: 798
 best_rating: 5
-draft: false
 ---
 
 Most SEOs add schema markup once, forget about it, and assume the job is done. That's not how it works. Schema is not a set-and-forget checkbox — it's a communication layer between your content and Google's systems. Used strategically, structured data helps search engines understand exactly what a page represents, which can make it eligible for enhanced search appearances and improve how it competes in results. Used carelessly, it adds noise and occasionally earns a manual action.

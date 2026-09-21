@@ -11,7 +11,6 @@ tags: []
 rating_value: 4.8
 rating_count: 192
 best_rating: 5
-draft: false
 ---
 
 If you run a WordPress website, there's a good chance search engines are already crawling it — but crawling isn't the same as understanding. Schema markup gives search engines structured, machine-readable information about your content: what a page is about, who published it, what products or services you offer, and how different pieces of information relate to each other.

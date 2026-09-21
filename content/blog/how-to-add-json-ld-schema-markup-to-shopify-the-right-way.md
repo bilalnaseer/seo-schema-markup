@@ -12,7 +12,6 @@ tags:
 rating_value: 4.9
 rating_count: 319
 best_rating: 5
-draft: false
 ---
 
 Shopify gives you a solid ecommerce foundation, but it doesn't automatically translate your product data into the structured format search engines can act on. That's where JSON-LD schema markup comes in — and getting it right on Shopify requires a bit more thought than copying a generic script into your theme.

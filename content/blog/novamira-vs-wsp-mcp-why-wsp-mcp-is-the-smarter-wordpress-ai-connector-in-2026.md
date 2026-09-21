@@ -12,7 +12,6 @@ tags:
 rating_value: 4.9
 rating_count: 747
 best_rating: 5
-draft: false
 ---
 
 AI coding for WordPress stopped being a novelty this year and became a real workflow. Instead of generating content in ChatGPT and pasting it into the block editor, tools built on the Model Context Protocol (MCP) let your AI assistant connect directly to your WordPress site and do the work itself - writing posts, fixing SEO, managing media, updating pages.
