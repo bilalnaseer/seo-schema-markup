@@ -6,6 +6,9 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 
 ## [Unreleased]
 
+### Added
+- **"Local SEO Audit Tool" link in the main menu, 2026-09-24.** External link to https://freelocalseoaudit.com/ added right after "Blog" in the primary nav — in `tools/chrome.js` and the two hand-written pages with a nav (`index.html`, `schema-markup-validator/index.html`; `404.html` has no nav). Opens in a new tab (`target="_blank" rel="noopener"`). Re-ran `build-pages.js` + `build-blog.js`; all 34 pages now carry the link. Footer unchanged.
+
 ### Removed
 - **Draft toggle removed from the blog CMS, 2026-09-21.** The `draft` boolean front-matter field (`admin/config.yml`, "Draft (hide from site)") let editors hide a published-looking post from the site even after it cleared the editorial workflow — redundant with Sveltia's built-in Draft → In review → Ready workflow, which already gates what merges to `main`. Removed the field from `admin/config.yml`, the `draft` read/filter from `tools/build-blog.js` (`loadPosts()` no longer sets or filters on it), the now-stale `draft: false` line from all 13 posts in `content/blog/*.md`, and the "non-draft" wording in the `index.html` blog-section comment. Re-ran `build-blog.js` + `build-sitemap.js`. Verified: all tool/asset JS still parses; all 13 posts still build.
 
