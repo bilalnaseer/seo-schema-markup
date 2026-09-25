@@ -15,13 +15,12 @@ Everything in the repo is already wired. The steps below are the one-time
 
 ```
 Team writes a post at /admin  →  Sveltia commits a .md to content/blog/
-   →  (editorial workflow) you approve it in the same /admin UI
    →  Cloudflare Pages runs the build  →  /blog/<slug>/ HTML + sitemap updated
    →  live on seoschemamarkup.com/blog
 ```
 
-Posts go through **Draft → In review → Ready**. Nothing publishes until you
-approve it — and you approve from inside the CMS, so you don't touch GitHub either.
+There is no draft/review step: clicking **Publish** in the CMS commits the post
+straight to `main` (no pull request), and it goes live after the ~1–2 minute build.
 
 ---
 
@@ -101,15 +100,15 @@ visit `seoschemamarkup.com/admin`, click **Login with GitHub**, and write posts.
 2. **Blog posts → New Blog post.**
 3. Fill in Title, Meta description, Publish date, and write the content.
 4. (Optional) add a cover image and tags.
-5. Save as **Draft**, move to **In review** when ready.
-6. An admin approves it → it publishes automatically in ~1–2 minutes.
+5. Click **Publish** → it is committed to `main` and goes live in ~1–2 minutes.
 
 ---
 
 ## Notes & maintenance
 
-- **Approval on/off:** `publish_mode: editorial_workflow` in `admin/config.yml`
-  enables the review gate. Remove that line to publish instantly (no approval).
+- **Approval on/off:** approval is currently **off** — posts publish straight to
+  `main`. Add `publish_mode: editorial_workflow` to `admin/config.yml` to
+  reinstate the Draft → In review → Ready gate (each post becomes a PR).
 - **Updating Sveltia:** the editor bundle is vendored at `admin/sveltia-cms.js`
   (pinned, no CDN — currently **0.209.2**). To update, re-download a pinned version:
   ```

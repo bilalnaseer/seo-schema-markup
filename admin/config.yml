@@ -16,9 +16,10 @@ backend:
     uploadMedia: 'Blog: upload {{path}}'
     deleteMedia: 'Blog: delete {{path}}'
 
-# Posts go through Draft -> In review -> Ready. Nothing publishes until approved
-# (you merge/approve from inside this same CMS UI — no GitHub knowledge needed).
-publish_mode: editorial_workflow
+# No editorial workflow: clicking Publish commits the post straight to `main`
+# (no Draft / In review / Ready, no pull request). Cloudflare Pages then
+# rebuilds and the post goes live. Add `publish_mode: editorial_workflow` back
+# to reinstate the review gate.
 
 # Cover images uploaded in the editor land here and are referenced as /assets/img/blog/...
 media_folder: "assets/img/blog"
