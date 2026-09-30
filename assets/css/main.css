@@ -380,7 +380,7 @@ pre.code code { font-family: inherit; white-space: pre; }
 .footer-badge-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .footer-grid a.footer-badge { display: inline-flex; line-height: 0; border-radius: 10px; transition: transform .2s ease, box-shadow .2s ease; }
 .footer-grid a.footer-badge:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
-.footer-badge img { display: block; width: auto; height: 44px; border-radius: 10px; }
+.footer-badge img { display: block; max-width: 100%; height: auto; border-radius: 10px; }
 @media (prefers-reduced-motion: reduce) { .footer-grid a.footer-badge { transition: none; } .footer-grid a.footer-badge:hover { transform: none; } }
 
 /* ---------- breadcrumb visual ---------- */

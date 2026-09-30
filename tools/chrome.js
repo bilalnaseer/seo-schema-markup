@@ -62,7 +62,7 @@ function footer() {
     <div class="footer-grid">
       <div>
         <a class="brand" href="/" style="margin-bottom:12px">${LOGO} SEO Schema Markup</a>
-        <p class="footer-about">Free, open-source JSON-LD schema generators and a validator. Built by <a href="https://websensepro.com">Bilal Naseer</a>, Shopify Partner &amp; official n8n Creator at <a href="https://websensepro.com">WebSensePro</a>.</p>
+        <p class="footer-about">Free, open-source JSON-LD schema generators and a validator. Built by <a href="https://websensepro.com">WebSensePro</a>.</p>
         <div class="footer-badges">
           <span class="footer-badges-label">Featured on</span>
           <div class="footer-badge-row">
@@ -71,6 +71,9 @@ function footer() {
             </a>
             <a href="https://fazier.com" target="_blank" rel="noopener" class="footer-badge">
               <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&amp;theme=light" alt="Featured on Fazier" width="186" height="44" loading="lazy" decoding="async">
+            </a>
+            <a href="https://startupfa.me/s/seo-schema-markup?utm_source=seoschemamarkup.com" target="_blank" rel="noopener" class="footer-badge">
+              <img src="https://startupfa.me/badges/featured-badge-small.webp" alt="SEO Schema Markup - Featured on Startup Fame" width="224" height="36" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
