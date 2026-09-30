@@ -6,6 +6,9 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 
 ## [Unreleased]
 
+### Added
+- **"Featured on TheSaaSDir" badge in the footer, 2026-09-30.** Added under the footer About blurb (brand column) with a small "Featured on" label, in `tools/chrome.js` and the two hand-written pages with the full footer (`index.html`, `schema-markup-validator/index.html`; `404.html` has no footer grid). Image is `loading="lazy" decoding="async"` with fixed 160×44 dimensions (no CLS). New `.footer-badges` / `.footer-badge` styles in `main.css` (rounded, subtle lift on hover, disabled under reduced motion). **The link/image still use the `your-product` placeholder slug from the snippet — replace with the real TheSaaSDir slug.** Re-ran `build-pages.js` + `build-blog.js` (which also refreshed the homepage blog cards to the 3 newest posts). Then added a second **Fazier "Featured" badge** next to it (`target="_blank" rel="noopener"`, `&amp;` escaped in the src); both now sit in a wrapping `.footer-badge-row`, sized to a matching 44px height (Fazier SVG is natively 182×43, so 186×44 instead of the snippet's `width=250`, which also lacked a height and would have caused CLS).
+
 ### Changed
 - **Homepage meta title + description rewritten for the focus keyword "Free Schema Markup Generator", 2026-09-30.** `index.html` `<title>` → `Free Schema Markup Generator & JSON-LD Validator | No Signup` (60 chars, exact keyword front-loaded); meta description → exact keyword as the opening words, schema types, Google-ready JSON-LD, create/validate/copy CTA, "No signup" (152 chars). `og:title`/`twitter:title` and `og:description`/`twitter:description` updated to match. H1 and JSON-LD unchanged.
 

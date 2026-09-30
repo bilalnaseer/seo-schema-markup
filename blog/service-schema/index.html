@@ -177,11 +177,11 @@
 <p>Look for errors (which break parsing) and warnings (which indicate suboptimal implementation). Fix errors first.</p>
 <hr>
 <h2><strong>Frequently Asked Questions</strong></h2>
-<p><strong>What is service schema?</strong>  Service schema is structured data based on the schema.org Service type. It's added to a webpage — typically via JSON-LD — to help search engines understand that the page describes a specific service, who offers it, where it's available, and related details. It's especially useful for businesses with multiple dedicated service pages.</p>
-<p><strong>Does service schema improve Google rankings?</strong>  Not directly. Service schema helps search engines better interpret your page's content and entity relationships, but it isn't a ranking signal in the traditional sense. That said, clearer page understanding can indirectly support how your content performs in both traditional search and AI-powered search experiences.</p>
-<p><strong>What's the difference between Service Schema and LocalBusiness Schema?</strong>  LocalBusiness schema describes your business as a whole: name, address, phone, and hours. Service schema describes a specific service your business offers. The two work together: use LocalBusiness on your main business page and Service schema on individual service pages, with the provider property linking them.</p>
-<p><strong>Can I add service schema with JSON-LD?</strong>  Yes — and it's the recommended approach. JSON-LD is a script-based format that doesn't require you to modify your existing HTML. You add a &lt;script type="application/ld+json"&gt; block containing structured data that search engines read during crawling without affecting how the page looks to visitors.</p>
-<p><strong>How do I check if my service schema is valid?</strong>  Use Google's Rich Results Test, the Schema.org validator, or a dedicated tool like the<a href="https://seoschemamarkup.com/schema-markup-validator/"> </a>Schema Markup Validator to test your implementation. Paste your page URL or the raw JSON-LD code to check for syntax errors, missing required properties, and other issues.</p>
+<p><strong>What is service schema?</strong> Service schema is structured data based on the schema.org Service type. It's added to a webpage — typically via JSON-LD — to help search engines understand that the page describes a specific service, who offers it, where it's available, and related details. It's especially useful for businesses with multiple dedicated service pages.</p>
+<p><strong>Does service schema improve Google rankings?</strong> Not directly. Service schema helps search engines better interpret your page's content and entity relationships, but it isn't a ranking signal in the traditional sense. That said, clearer page understanding can indirectly support how your content performs in both traditional search and AI-powered search experiences.</p>
+<p><strong>What's the difference between Service Schema and LocalBusiness Schema?</strong> LocalBusiness schema describes your business as a whole: name, address, phone, and hours. Service schema describes a specific service your business offers. The two work together: use LocalBusiness on your main business page and Service schema on individual service pages, with the provider property linking them.</p>
+<p><strong>Can I add service schema with JSON-LD?</strong> Yes — and it's the recommended approach. JSON-LD is a script-based format that doesn't require you to modify your existing HTML. You add a &lt;script type="application/ld+json"&gt; block containing structured data that search engines read during crawling without affecting how the page looks to visitors.</p>
+<p><strong>How do I check if my service schema is valid?</strong> Use Google's Rich Results Test, the Schema.org validator, or a dedicated tool like the<a href="https://seoschemamarkup.com/schema-markup-validator/"> </a>Schema Markup Validator to test your implementation. Paste your page URL or the raw JSON-LD code to check for syntax errors, missing required properties, and other issues.</p>
 <hr>
 <p>Service pages are often the highest-converting pages on a service business website. Giving them the structured data context they deserve is a small investment that helps search engines — and increasingly, AI systems — represent your services accurately. Get the markup right, validate it, and keep it up to date as your offerings change.</p>
     </article>
@@ -204,6 +204,17 @@
       <div>
         <a class="brand" href="/" style="margin-bottom:12px"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5b6cff"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> SEO Schema Markup</a>
         <p class="footer-about">Free, open-source JSON-LD schema generators and a validator. Built by <a href="https://websensepro.com">Bilal Naseer</a>, Shopify Partner &amp; official n8n Creator at <a href="https://websensepro.com">WebSensePro</a>.</p>
+        <div class="footer-badges">
+          <span class="footer-badges-label">Featured on</span>
+          <div class="footer-badge-row">
+            <a href="https://thesaasdir.com/product/your-product?ref=badge" rel="dofollow" class="footer-badge">
+              <img src="https://thesaasdir.com/badge/your-product.svg" alt="Featured on TheSaaSDir" width="160" height="44" loading="lazy" decoding="async">
+            </a>
+            <a href="https://fazier.com" target="_blank" rel="noopener" class="footer-badge">
+              <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&amp;theme=light" alt="Featured on Fazier" width="186" height="44" loading="lazy" decoding="async">
+            </a>
+          </div>
+        </div>
       </div>
       <div>
         <h4>Generators</h4>
