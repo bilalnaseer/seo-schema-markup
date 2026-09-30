@@ -6,6 +6,9 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 
 ## [Unreleased]
 
+### Changed
+- **Homepage meta title + description rewritten for the focus keyword "Free Schema Markup Generator", 2026-09-30.** `index.html` `<title>` → `Free Schema Markup Generator & JSON-LD Validator | No Signup` (60 chars, exact keyword front-loaded); meta description → exact keyword as the opening words, schema types, Google-ready JSON-LD, create/validate/copy CTA, "No signup" (152 chars). `og:title`/`twitter:title` and `og:description`/`twitter:description` updated to match. H1 and JSON-LD unchanged.
+
 ### Added
 - **"Local SEO Audit Tool" link in the main menu, 2026-09-24.** External link to https://freelocalseoaudit.com/ added right after "Blog" in the primary nav — in `tools/chrome.js` and the two hand-written pages with a nav (`index.html`, `schema-markup-validator/index.html`; `404.html` has no nav). Opens in a new tab (`target="_blank" rel="noopener"`). Re-ran `build-pages.js` + `build-blog.js`; all 34 pages now carry the link. Footer unchanged.
 
