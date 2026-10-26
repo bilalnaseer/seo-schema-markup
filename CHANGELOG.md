@@ -6,6 +6,9 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 
 ## [Unreleased]
 
+### Added
+- **Video Schema Generator, 2026-10-26.** New `/video-schema-generator/` page with a live `VideoObject` JSON-LD generator (`assets/js/generators/video.js`). Required fields: `name`, `description`, `thumbnailUrl`, `uploadDate`. Recommended: `contentUrl`, `embedUrl`, `duration`. Advanced fields: page URL, expiry date, family-friendly flag, regions allowed, publisher name and logo. Full nav and footer updated across all 36 existing HTML pages; homepage generator grid card added (🎬). Schema rules for `VideoObject` were already present in `schema-rules.js` (pointing to `/video-schema-generator/`) — the generator page was the missing piece.
+
 ### Changed
 - **Footer credit now reads "Built by WebSensePro", 2026-09-30.** Dropped the personal name and "Shopify Partner &amp; official n8n Creator" line from the footer About blurb (`tools/chrome.js`, `index.html`, `schema-markup-validator/index.html`); rebuilt all pages.
 
