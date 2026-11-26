@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 101
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 If you run an online store, your category pages — also called collection pages — are often your highest-traffic landing pages. Yet most e-commerce sites leave a major SEO opportunity untouched on these pages: **collection page schema**.

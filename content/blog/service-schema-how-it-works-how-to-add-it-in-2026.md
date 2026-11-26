@@ -14,6 +14,7 @@ rating_value: 4.8
 rating_count: 911
 best_rating: 5
 draft: false
+internal_links_nofollow: false
 ---
 
 If your business offers services — whether you're an HVAC contractor, a law firm, a marketing agency, or a plumber — there's a good chance your website has individual service pages. But does Google fully understand what those pages are about? That's exactly where service schema comes in.

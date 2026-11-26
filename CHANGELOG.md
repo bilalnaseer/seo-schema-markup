@@ -7,6 +7,7 @@ All notable changes to this project. Newest first. Agents: **append an entry her
 ## [Unreleased]
 
 ### Added
+- **Per-post follow/nofollow toggle for internal blog links, 2026-11-26.** New CMS toggle "Nofollow internal links" (`internal_links_nofollow`, off by default) in `admin/config.yml`. `tools/build-blog.js` applies it to internal links in the post body only: off means no `nofollow` (dofollow), on adds `rel="nofollow"`. External links are unchanged. All 32 existing posts set to `false`. Also fixed underscores in link URLs / `target="_blank"` being parsed as italics, which broke a link in two posts.
 - **Video Schema Generator, 2026-10-26.** New `/video-schema-generator/` page with a live `VideoObject` JSON-LD generator (`assets/js/generators/video.js`). Required fields: `name`, `description`, `thumbnailUrl`, `uploadDate`. Recommended: `contentUrl`, `embedUrl`, `duration`. Advanced fields: page URL, expiry date, family-friendly flag, regions allowed, publisher name and logo. Full nav and footer updated across all 36 existing HTML pages; homepage generator grid card added (🎬). Schema rules for `VideoObject` were already present in `schema-rules.js` (pointing to `/video-schema-generator/`) — the generator page was the missing piece.
 
 ### Changed

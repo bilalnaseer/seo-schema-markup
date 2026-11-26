@@ -13,6 +13,7 @@ tags:
 rating_value: 4.8
 rating_count: 342
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Creating valuable website content is important for SEO, but search engines also need to understand who created that content. This is where [**schema author markup**](https://seoschemamarkup.com/blog/author-schema-guide/) becomes useful. It helps search engines identify the person or organization responsible for an article, making the content easier to interpret.

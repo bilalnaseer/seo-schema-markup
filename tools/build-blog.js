@@ -86,14 +86,18 @@ function slugify(s) {
 /* ---------------- inline Markdown ---------------- */
 function inline(text) {
   let s = escText(text);
+  // Generated <img>/<a> tags are parked behind placeholders so the emphasis
+  // rules below can't treat underscores in URLs or target="_blank" as italics.
+  const tags = [];
+  const stash = (tag) => `\u0000${tags.push(tag) - 1}\u0000`;
   // images  ![alt](src)
   s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g,
-    (_, alt, src, title) => `<img src="${esc(src)}" alt="${esc(alt)}"${title ? ` title="${esc(title)}"` : ''} loading="lazy">`);
+    (_, alt, src, title) => stash(`<img src="${esc(src)}" alt="${esc(alt)}"${title ? ` title="${esc(title)}"` : ''} loading="lazy">`));
   // links  [text](href)
   s = s.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g, (_, txt, href, title) => {
     const ext = /^https?:\/\//.test(href) && !href.includes('seoschemamarkup.com');
     const attrs = ext ? ' rel="noopener" target="_blank"' : '';
-    return `<a href="${esc(href)}"${title ? ` title="${esc(title)}"` : ''}${attrs}>${txt}</a>`;
+    return `${stash(`<a href="${esc(href)}"${title ? ` title="${esc(title)}"` : ''}${attrs}>`)}${txt}</a>`;
   });
   // inline code  `code`
   s = s.replace(/`([^`]+)`/g, (_, c) => `<code>${c}</code>`);
@@ -101,7 +105,36 @@ function inline(text) {
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/__([^_]+)__/g, '<strong>$1</strong>');
   // italic  *text*  _text_
   s = s.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>').replace(/(^|[^_\w])_([^_]+)_/g, '$1<em>$2</em>');
-  return s;
+  return s.replace(/\u0000(\d+)\u0000/g, (_, n) => tags[n]);
+}
+
+/* ---------------- internal link follow / nofollow ----------------
+   Internal links in a post body are dofollow (no "nofollow" in rel) unless the
+   post sets `internal_links_nofollow: true` (the CMS toggle). The setting wins
+   over any rel typed into raw HTML. External links are never touched. */
+function isInternalHref(href) {
+  if (!href || href.startsWith('#')) return false;
+  try {
+    const url = new URL(href, SITE + '/');
+    return /^https?:$/.test(url.protocol) &&
+      url.hostname.replace(/^www\./, '') === new URL(SITE).hostname.replace(/^www\./, '');
+  } catch {
+    return false;
+  }
+}
+
+function setInternalLinkRel(html, nofollow) {
+  return html.replace(/<a\s[^>]*>/gi, (tag) => {
+    const href = tag.match(/\shref\s*=\s*(["'])(.*?)\1/i);
+    if (!href || !isInternalHref(href[2])) return tag;
+    const REL = /\srel\s*=\s*(["'])(.*?)\1/i;
+    const current = tag.match(REL);
+    const values = (current ? current[2] : '').split(/\s+/)
+      .filter((v) => v && !/^(nofollow|dofollow)$/i.test(v));
+    if (nofollow) values.push('nofollow');
+    const rel = values.length ? ` rel="${values.join(' ')}"` : '';
+    return current ? tag.replace(REL, () => rel) : tag.replace(/>$/, () => `${rel}>`);
+  });
 }
 
 /* ---------------- block Markdown ---------------- */
@@ -249,7 +282,7 @@ function loadPosts() {
           count: data.rating_count != null ? String(data.rating_count).trim() : '',
           best: data.best_rating != null ? String(data.best_rating).trim() : '',
         },
-        bodyHtml: markdown(body),
+        bodyHtml: setInternalLinkRel(markdown(body), String(data.internal_links_nofollow).toLowerCase() === 'true'),
       };
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));

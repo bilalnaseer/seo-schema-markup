@@ -13,6 +13,7 @@ tags:
 rating_value: 4.8
 rating_count: 633
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Recruiting qualified candidates online has become increasingly competitive. Companies and recruitment websites need more than well-written job descriptions to reach the right applicants. Search engines also need to understand important information about each vacancy, including the job title, employer, location, salary, and application details. This is where **job posting schema** becomes useful.

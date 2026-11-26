@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 105
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 If you are looking for a **Free Photoshop Alternative**, you do not need to spend money on expensive software to create attractive images. Several free and accessible creative tools can help beginners, bloggers, graphic designers, and small business owners edit photos and create graphics.

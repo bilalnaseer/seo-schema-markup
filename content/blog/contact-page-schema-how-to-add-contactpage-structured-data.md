@@ -13,6 +13,7 @@ tags:
 rating_value: 4.9
 rating_count: 33
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 A contact page is an important part of almost every business website. It tells visitors how to reach a company, but it can also provide useful information to search engines. **Contact Page Schema** helps describe a contact page using structured data, so search engines can better understand the page's purpose and the information it contains.

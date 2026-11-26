@@ -13,6 +13,7 @@ tags:
 rating_value: 4.8
 rating_count: 442
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Events such as concerts, conferences, workshops, and public gatherings need to be easy for people to discover online. **Event schema markup** helps search engines understand important event details, including the name, date, location, and ticket information.

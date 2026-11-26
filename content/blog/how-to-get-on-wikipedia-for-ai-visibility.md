@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 407
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Getting your business featured on Wikipedia can strengthen its digital presence and help search engines and AI platforms understand your brand. As people increasingly use ChatGPT, Google AI Overviews, Gemini, and Perplexity to discover companies, accurate, verifiable information across trusted sources is becoming more important.

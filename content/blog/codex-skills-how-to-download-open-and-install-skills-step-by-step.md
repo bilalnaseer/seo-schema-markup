@@ -13,6 +13,7 @@ tags:
 rating_value: 4.9
 rating_count: 411
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Codex Skills help developers turn repetitive coding tasks into reusable workflows. Each skill contains instructions in a SKILL.md file and may include supporting scripts, references, or templates. Instead of repeating the same instructions, you can let Codex follow a predefined process.

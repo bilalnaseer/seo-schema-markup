@@ -13,6 +13,7 @@ tags:
 rating_value: 4.8
 rating_count: 117
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Person schema helps search engines understand who a person is, what they do, and how they are connected to a website, business, or online profile. Person schema markup allows website owners to organize and share key details about authors, business founders, industry experts, consultants, and other professionals in a format that search engines can easily interpret. It is particularly useful for websites that want to establish clear author identities and improve how search engines interpret their content.

@@ -11,6 +11,7 @@ tags: []
 rating_value: 5
 rating_count: 453
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Learn how to generate, validate, and implement Restaurant Schema Markup with JSON-LD to win rich results on Google — step by step.

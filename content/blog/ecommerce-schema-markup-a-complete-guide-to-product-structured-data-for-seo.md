@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 772
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Running an online store means competing for attention in crowded search results. When shoppers search for products on Google, they often compare prices, availability, ratings, and product details before clicking a website. Ecommerce schema markup helps search engines understand this information and can make eligible product pages appear with enhanced search features.

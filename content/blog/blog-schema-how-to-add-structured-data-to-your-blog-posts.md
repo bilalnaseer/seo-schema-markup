@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 399
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Publishing useful blog content is only part of a successful SEO strategy. Search engines also need to understand what each piece of content represents, who created it, when it was published, and how it relates to your website. **Blog schema** helps communicate these details through structured data.

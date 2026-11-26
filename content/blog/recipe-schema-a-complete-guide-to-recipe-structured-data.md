@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 42
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Food and recipe websites compete for attention in search results, where users often want quick information such as ingredients, cooking time, calories, ratings, and preparation steps. **Recipe Schema** helps search engines understand these details by adding structured data to a recipe page.

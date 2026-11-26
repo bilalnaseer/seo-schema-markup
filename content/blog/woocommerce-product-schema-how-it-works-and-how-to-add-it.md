@@ -14,6 +14,7 @@ rating_value: 4.9
 rating_count: 211
 best_rating: 5
 draft: false
+internal_links_nofollow: false
 ---
 
 If you run a WooCommerce store, your product pages contain a wealth of information — prices, availability, reviews, SKUs, images. But search engines can't always interpret that data the way a human shopper would. Product schema bridges that gap by translating your product details into a structured format that Google and other search engines can read and understand.

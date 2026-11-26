@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 699
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Videos help businesses explain products, share tutorials, and engage website visitors. However, search engines need clear information to understand the videos published on your website. A **video schema generator** simplifies this process by creating structured data that describes your video content.

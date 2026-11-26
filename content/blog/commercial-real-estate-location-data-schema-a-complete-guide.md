@@ -13,6 +13,7 @@ tags:
 rating_value: 4.9
 rating_count: 559
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Commercial real estate websites need accurate property information to attract investors, buyers, tenants, and business owners. However, simply publishing an address and property description may not provide search engines with enough context to understand a listing. This is where commercial real estate location data schema becomes valuable.

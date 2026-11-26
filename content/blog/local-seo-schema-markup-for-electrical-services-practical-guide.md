@@ -16,6 +16,7 @@ tags:
 rating_value: 4.8
 rating_count: 721
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 A lot of electricians put real effort into their websites — clear service pages, professional photos, contact forms. But there's a gap that often goes unnoticed: search engines can't always tell what business they're looking at, where it operates, or what services it actually offers. That's not a content problem. It's a communication problem between your website and the machines crawling it.

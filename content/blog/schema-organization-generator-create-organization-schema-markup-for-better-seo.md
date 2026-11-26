@@ -13,6 +13,7 @@ tags:
 rating_value: 4.8
 rating_count: 771
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Building a strong online presence requires more than publishing quality content and optimizing website pages. Search engines also need to understand who owns a website, what the business does, and how its brand is represented across the internet. This is where organization schema markup becomes useful.

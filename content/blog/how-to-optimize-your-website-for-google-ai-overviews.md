@@ -13,6 +13,7 @@ tags:
 rating_value: 5
 rating_count: 352
 best_rating: 5
+internal_links_nofollow: false
 ---
 
 Google Search is evolving beyond traditional blue links. With AI-generated answers appearing directly in search results, businesses need to improve how their websites communicate information, demonstrate expertise, and provide useful content. This makes **How to optimize for Google AI Overviews** an important topic for modern SEO strategies.

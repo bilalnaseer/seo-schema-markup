@@ -66,3 +66,5 @@ collections:
       - { name: best_rating, label: "Best possible rating", widget: number, required: false, value_type: int, default: 5 }
       # ----------------------------------------------------------------------
       - { name: body, label: "Post content", widget: markdown, hint: "Tip: use Insert → Table in the toolbar to add a table (paste rows straight from a spreadsheet)." }
+      # Applies only to internal links inside the post body (tools/build-blog.js).
+      - { name: internal_links_nofollow, label: "Nofollow internal links", widget: boolean, required: false, default: false, hint: "Keep this off for dofollow internal links. Turn it on to make the internal links in this post nofollow." }
